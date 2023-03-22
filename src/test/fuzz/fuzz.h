@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_TEST_FUZZ_FUZZ_H
-#define FUJICOIN_TEST_FUZZ_FUZZ_H
+#ifndef BARICOIN_TEST_FUZZ_FUZZ_H
+#define BARICOIN_TEST_FUZZ_FUZZ_H
 
 #include <span.h>
 
@@ -44,4 +44,4 @@ inline void FuzzFrameworkEmptyInitFun() {}
     } const static g_##name##_before_main;                                            \
     void name##_fuzz_target(FuzzBufferType buffer)
 
-#endif // FUJICOIN_TEST_FUZZ_FUZZ_H
+#endif // BARICOIN_TEST_FUZZ_FUZZ_H

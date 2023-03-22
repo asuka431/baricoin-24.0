@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_IPC_EXCEPTION_H
-#define FUJICOIN_IPC_EXCEPTION_H
+#ifndef BARICOIN_IPC_EXCEPTION_H
+#define BARICOIN_IPC_EXCEPTION_H
 
 #include <stdexcept>
 
@@ -17,4 +17,4 @@ public:
 };
 } // namespace ipc
 
-#endif // FUJICOIN_IPC_EXCEPTION_H
+#endif // BARICOIN_IPC_EXCEPTION_H

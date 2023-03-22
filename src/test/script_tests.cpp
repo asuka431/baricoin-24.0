@@ -21,7 +21,7 @@
 #include <util/system.h>
 
 #if defined(HAVE_CONSENSUS_LIB)
-#include <script/fujicoinconsensus.h>
+#include <script/baricoinconsensus.h>
 #endif
 
 #include <cstdint>
@@ -152,14 +152,14 @@ void DoTest(const CScript& scriptPubKey, const CScript& scriptSig, const CScript
 #if defined(HAVE_CONSENSUS_LIB)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << tx2;
-    uint32_t libconsensus_flags{flags & fujicoinconsensus_SCRIPT_FLAGS_VERIFY_ALL};
+    uint32_t libconsensus_flags{flags & baricoinconsensus_SCRIPT_FLAGS_VERIFY_ALL};
     if (libconsensus_flags == flags) {
         int expectedSuccessCode = expect ? 1 : 0;
-        if (flags & fujicoinconsensus_SCRIPT_FLAGS_VERIFY_WITNESS) {
-            BOOST_CHECK_MESSAGE(fujicoinconsensus_verify_script_with_amount(scriptPubKey.data(), scriptPubKey.size(), txCredit.vout[0].nValue, UCharCast(stream.data()), stream.size(), 0, libconsensus_flags, nullptr) == expectedSuccessCode, message);
+        if (flags & baricoinconsensus_SCRIPT_FLAGS_VERIFY_WITNESS) {
+            BOOST_CHECK_MESSAGE(baricoinconsensus_verify_script_with_amount(scriptPubKey.data(), scriptPubKey.size(), txCredit.vout[0].nValue, UCharCast(stream.data()), stream.size(), 0, libconsensus_flags, nullptr) == expectedSuccessCode, message);
         } else {
-            BOOST_CHECK_MESSAGE(fujicoinconsensus_verify_script_with_amount(scriptPubKey.data(), scriptPubKey.size(), 0, UCharCast(stream.data()), stream.size(), 0, libconsensus_flags, nullptr) == expectedSuccessCode, message);
-            BOOST_CHECK_MESSAGE(fujicoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), 0, libconsensus_flags, nullptr) == expectedSuccessCode, message);
+            BOOST_CHECK_MESSAGE(baricoinconsensus_verify_script_with_amount(scriptPubKey.data(), scriptPubKey.size(), 0, UCharCast(stream.data()), stream.size(), 0, libconsensus_flags, nullptr) == expectedSuccessCode, message);
+            BOOST_CHECK_MESSAGE(baricoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), 0, libconsensus_flags, nullptr) == expectedSuccessCode, message);
         }
     }
 #endif
@@ -1503,8 +1503,8 @@ static CScriptWitness ScriptWitnessFromJSON(const UniValue& univalue)
 
 #if defined(HAVE_CONSENSUS_LIB)
 
-/* Test simple (successful) usage of fujicoinconsensus_verify_script */
-BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_returns_true)
+/* Test simple (successful) usage of baricoinconsensus_verify_script */
+BOOST_AUTO_TEST_CASE(baricoinconsensus_verify_script_returns_true)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 0;
@@ -1520,14 +1520,14 @@ BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_returns_true)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    fujicoinconsensus_error err;
-    int result = fujicoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
+    baricoinconsensus_error err;
+    int result = baricoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 1);
-    BOOST_CHECK_EQUAL(err, fujicoinconsensus_ERR_OK);
+    BOOST_CHECK_EQUAL(err, baricoinconsensus_ERR_OK);
 }
 
-/* Test fujicoinconsensus_verify_script returns invalid tx index err*/
-BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_tx_index_err)
+/* Test baricoinconsensus_verify_script returns invalid tx index err*/
+BOOST_AUTO_TEST_CASE(baricoinconsensus_verify_script_tx_index_err)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 3;
@@ -1543,14 +1543,14 @@ BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_tx_index_err)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    fujicoinconsensus_error err;
-    int result = fujicoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
+    baricoinconsensus_error err;
+    int result = baricoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, fujicoinconsensus_ERR_TX_INDEX);
+    BOOST_CHECK_EQUAL(err, baricoinconsensus_ERR_TX_INDEX);
 }
 
-/* Test fujicoinconsensus_verify_script returns tx size mismatch err*/
-BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_tx_size)
+/* Test baricoinconsensus_verify_script returns tx size mismatch err*/
+BOOST_AUTO_TEST_CASE(baricoinconsensus_verify_script_tx_size)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 0;
@@ -1566,14 +1566,14 @@ BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_tx_size)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    fujicoinconsensus_error err;
-    int result = fujicoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size() * 2, nIn, libconsensus_flags, &err);
+    baricoinconsensus_error err;
+    int result = baricoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size() * 2, nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, fujicoinconsensus_ERR_TX_SIZE_MISMATCH);
+    BOOST_CHECK_EQUAL(err, baricoinconsensus_ERR_TX_SIZE_MISMATCH);
 }
 
-/* Test fujicoinconsensus_verify_script returns invalid tx serialization error */
-BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_tx_serialization)
+/* Test baricoinconsensus_verify_script returns invalid tx serialization error */
+BOOST_AUTO_TEST_CASE(baricoinconsensus_verify_script_tx_serialization)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 0;
@@ -1589,16 +1589,16 @@ BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_tx_serialization)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << 0xffffffff;
 
-    fujicoinconsensus_error err;
-    int result = fujicoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
+    baricoinconsensus_error err;
+    int result = baricoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, fujicoinconsensus_ERR_TX_DESERIALIZE);
+    BOOST_CHECK_EQUAL(err, baricoinconsensus_ERR_TX_DESERIALIZE);
 }
 
-/* Test fujicoinconsensus_verify_script returns amount required error */
-BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_amount_required_err)
+/* Test baricoinconsensus_verify_script returns amount required error */
+BOOST_AUTO_TEST_CASE(baricoinconsensus_verify_script_amount_required_err)
 {
-    unsigned int libconsensus_flags = fujicoinconsensus_SCRIPT_FLAGS_VERIFY_WITNESS;
+    unsigned int libconsensus_flags = baricoinconsensus_SCRIPT_FLAGS_VERIFY_WITNESS;
     int nIn = 0;
 
     CScript scriptPubKey;
@@ -1612,14 +1612,14 @@ BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_amount_required_err)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    fujicoinconsensus_error err;
-    int result = fujicoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
+    baricoinconsensus_error err;
+    int result = baricoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, fujicoinconsensus_ERR_AMOUNT_REQUIRED);
+    BOOST_CHECK_EQUAL(err, baricoinconsensus_ERR_AMOUNT_REQUIRED);
 }
 
-/* Test fujicoinconsensus_verify_script returns invalid flags err */
-BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_invalid_flags)
+/* Test baricoinconsensus_verify_script returns invalid flags err */
+BOOST_AUTO_TEST_CASE(baricoinconsensus_verify_script_invalid_flags)
 {
     unsigned int libconsensus_flags = 1 << 3;
     int nIn = 0;
@@ -1635,10 +1635,10 @@ BOOST_AUTO_TEST_CASE(fujicoinconsensus_verify_script_invalid_flags)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    fujicoinconsensus_error err;
-    int result = fujicoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
+    baricoinconsensus_error err;
+    int result = baricoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, fujicoinconsensus_ERR_INVALID_FLAGS);
+    BOOST_CHECK_EQUAL(err, baricoinconsensus_ERR_INVALID_FLAGS);
 }
 
 #endif // defined(HAVE_CONSENSUS_LIB)

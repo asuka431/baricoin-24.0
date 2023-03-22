@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_BIP32_H
-#define FUJICOIN_UTIL_BIP32_H
+#ifndef BARICOIN_UTIL_BIP32_H
+#define BARICOIN_UTIL_BIP32_H
 
 #include <cstdint>
 #include <string>
@@ -16,4 +16,4 @@
 std::string WriteHDKeypath(const std::vector<uint32_t>& keypath);
 std::string FormatHDKeypath(const std::vector<uint32_t>& path);
 
-#endif // FUJICOIN_UTIL_BIP32_H
+#endif // BARICOIN_UTIL_BIP32_H

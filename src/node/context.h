@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NODE_CONTEXT_H
-#define FUJICOIN_NODE_CONTEXT_H
+#ifndef BARICOIN_NODE_CONTEXT_H
+#define BARICOIN_NODE_CONTEXT_H
 
 #include <kernel/context.h>
 
@@ -41,7 +41,7 @@ namespace node {
 //! any member functions. It should just be a collection of references that can
 //! be used without pulling in unwanted dependencies or functionality.
 struct NodeContext {
-    //! libfujicoin_kernel context
+    //! libbaricoin_kernel context
     std::unique_ptr<kernel::Context> kernel;
     //! Init interface for initializing current process and connecting to other processes.
     interfaces::Init* init{nullptr};
@@ -71,4 +71,4 @@ struct NodeContext {
 };
 } // namespace node
 
-#endif // FUJICOIN_NODE_CONTEXT_H
+#endif // BARICOIN_NODE_CONTEXT_H

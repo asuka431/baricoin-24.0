@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_CONSENSUS_CONSENSUS_H
-#define FUJICOIN_CONSENSUS_CONSENSUS_H
+#ifndef BARICOIN_CONSENSUS_CONSENSUS_H
+#define BARICOIN_CONSENSUS_CONSENSUS_H
 
 #include <stdlib.h>
 #include <stdint.h>
@@ -27,4 +27,4 @@ static const size_t MIN_SERIALIZABLE_TRANSACTION_WEIGHT = WITNESS_SCALE_FACTOR *
 /** Interpret sequence numbers as relative lock-time constraints. */
 static constexpr unsigned int LOCKTIME_VERIFY_SEQUENCE = (1 << 0);
 
-#endif // FUJICOIN_CONSENSUS_CONSENSUS_H
+#endif // BARICOIN_CONSENSUS_CONSENSUS_H

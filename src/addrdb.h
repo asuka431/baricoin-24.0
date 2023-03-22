@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_ADDRDB_H
-#define FUJICOIN_ADDRDB_H
+#ifndef BARICOIN_ADDRDB_H
+#define BARICOIN_ADDRDB_H
 
 #include <fs.h>
 #include <net_types.h> // For banmap_t
@@ -67,4 +67,4 @@ void DumpAnchors(const fs::path& anchors_db_path, const std::vector<CAddress>& a
  */
 std::vector<CAddress> ReadAnchors(const fs::path& anchors_db_path);
 
-#endif // FUJICOIN_ADDRDB_H
+#endif // BARICOIN_ADDRDB_H

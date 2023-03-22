@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NET_H
-#define FUJICOIN_NET_H
+#ifndef BARICOIN_NET_H
+#define BARICOIN_NET_H
 
 #include <chainparams.h>
 #include <common/bloom.h>
@@ -1181,4 +1181,4 @@ extern std::function<void(const CAddress& addr,
                           bool is_incoming)>
     CaptureMessage;
 
-#endif // FUJICOIN_NET_H
+#endif // BARICOIN_NET_H

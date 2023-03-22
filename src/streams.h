@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_STREAMS_H
-#define FUJICOIN_STREAMS_H
+#ifndef BARICOIN_STREAMS_H
+#define BARICOIN_STREAMS_H
 
 #include <serialize.h>
 #include <span.h>
@@ -736,4 +736,4 @@ public:
     }
 };
 
-#endif // FUJICOIN_STREAMS_H
+#endif // BARICOIN_STREAMS_H

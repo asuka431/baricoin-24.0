@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020 The Fujicoin Core developers
+# Copyright (c) 2020 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import os
 
-from test_framework.test_framework import FujicoinTestFramework
+from test_framework.test_framework import BaricoinTestFramework
 from test_framework.util import assert_raises_rpc_error
 
-class WalletCrossChain(FujicoinTestFramework):
+class WalletCrossChain(BaricoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = True
@@ -22,9 +22,9 @@ class WalletCrossChain(FujicoinTestFramework):
         # Switch node 1 to testnet before starting it.
         self.nodes[1].chain = 'testnet3'
         self.nodes[1].extra_args = ['-maxconnections=0'] # disable testnet sync
-        with open(self.nodes[1].fujicoinconf, 'r', encoding='utf8') as conf:
+        with open(self.nodes[1].baricoinconf, 'r', encoding='utf8') as conf:
             conf_data = conf.read()
-        with open (self.nodes[1].fujicoinconf, 'w', encoding='utf8') as conf:
+        with open (self.nodes[1].baricoinconf, 'w', encoding='utf8') as conf:
             conf.write(conf_data.replace('regtest=', 'testnet=').replace('[regtest]', '[test]'))
 
         self.start_nodes()

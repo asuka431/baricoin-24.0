@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017-2021 The Fujicoin Core developers
+# Copyright (c) 2017-2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test that mempool.dat is both backward and forward compatible between versions
@@ -13,14 +13,14 @@ The previous release v0.19.1 is required by this test, see test/README.md.
 import os
 
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import FujicoinTestFramework
+from test_framework.test_framework import BaricoinTestFramework
 from test_framework.wallet import (
     MiniWallet,
     MiniWalletMode,
 )
 
 
-class MempoolCompatibilityTest(FujicoinTestFramework):
+class MempoolCompatibilityTest(BaricoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.wallet_names = [None]

@@ -3,11 +3,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_VALIDATION_H
-#define FUJICOIN_VALIDATION_H
+#ifndef BARICOIN_VALIDATION_H
+#define BARICOIN_VALIDATION_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <arith_uint256.h>
@@ -1085,4 +1085,4 @@ bool DeploymentEnabled(const ChainstateManager& chainman, DEP dep)
  */
 const AssumeutxoData* ExpectedAssumeutxo(const int height, const CChainParams& params);
 
-#endif // FUJICOIN_VALIDATION_H
+#endif // BARICOIN_VALIDATION_H

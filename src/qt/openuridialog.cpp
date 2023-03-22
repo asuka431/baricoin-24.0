@@ -37,7 +37,7 @@ QString OpenURIDialog::getURI()
 void OpenURIDialog::accept()
 {
     SendCoinsRecipient rcp;
-    if (GUIUtil::parseFujicoinURI(getURI(), &rcp)) {
+    if (GUIUtil::parseBaricoinURI(getURI(), &rcp)) {
         /* Only accept value URIs */
         QDialog::accept();
     } else {

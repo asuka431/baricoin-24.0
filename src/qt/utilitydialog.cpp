@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <qt/utilitydialog.h>
@@ -58,7 +58,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, bool about) :
         ui->helpMessage->setVisible(false);
     } else {
         setWindowTitle(tr("Command-line options"));
-        QString header = "Usage:  fujicoin-qt [command-line options]                     \n";
+        QString header = "Usage:  baricoin-qt [command-line options]                     \n";
         QTextCursor cursor(ui->helpMessage->document());
         cursor.insertText(version);
         cursor.insertBlock();

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_CONSENSUS_VALIDATION_H
-#define FUJICOIN_CONSENSUS_VALIDATION_H
+#ifndef BARICOIN_CONSENSUS_VALIDATION_H
+#define BARICOIN_CONSENSUS_VALIDATION_H
 
 #include <string>
 #include <version.h>
@@ -180,4 +180,4 @@ inline int GetWitnessCommitmentIndex(const CBlock& block)
     return commitpos;
 }
 
-#endif // FUJICOIN_CONSENSUS_VALIDATION_H
+#endif // BARICOIN_CONSENSUS_VALIDATION_H

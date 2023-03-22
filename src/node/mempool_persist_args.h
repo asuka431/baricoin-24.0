@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NODE_MEMPOOL_PERSIST_ARGS_H
-#define FUJICOIN_NODE_MEMPOOL_PERSIST_ARGS_H
+#ifndef BARICOIN_NODE_MEMPOOL_PERSIST_ARGS_H
+#define BARICOIN_NODE_MEMPOOL_PERSIST_ARGS_H
 
 #include <fs.h>
 
@@ -22,4 +22,4 @@ fs::path MempoolPath(const ArgsManager& argsman);
 
 } // namespace node
 
-#endif // FUJICOIN_NODE_MEMPOOL_PERSIST_ARGS_H
+#endif // BARICOIN_NODE_MEMPOOL_PERSIST_ARGS_H

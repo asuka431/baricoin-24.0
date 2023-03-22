@@ -6,8 +6,8 @@
 /**
  * Utilities for converting data from/to strings.
  */
-#ifndef FUJICOIN_UTIL_STRENCODINGS_H
-#define FUJICOIN_UTIL_STRENCODINGS_H
+#ifndef BARICOIN_UTIL_STRENCODINGS_H
+#define BARICOIN_UTIL_STRENCODINGS_H
 
 #include <span.h>
 #include <util/string.h>
@@ -362,4 +362,4 @@ std::string Capitalize(std::string str);
  */
 std::optional<uint64_t> ParseByteUnits(std::string_view str, ByteUnit default_multiplier);
 
-#endif // FUJICOIN_UTIL_STRENCODINGS_H
+#endif // BARICOIN_UTIL_STRENCODINGS_H

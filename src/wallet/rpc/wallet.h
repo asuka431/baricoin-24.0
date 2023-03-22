@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_RPC_WALLET_H
-#define FUJICOIN_WALLET_RPC_WALLET_H
+#ifndef BARICOIN_WALLET_RPC_WALLET_H
+#define BARICOIN_WALLET_RPC_WALLET_H
 
 #include <span.h>
 
@@ -13,4 +13,4 @@ namespace wallet {
 Span<const CRPCCommand> GetWalletRPCCommands();
 } // namespace wallet
 
-#endif // FUJICOIN_WALLET_RPC_WALLET_H
+#endif // BARICOIN_WALLET_RPC_WALLET_H

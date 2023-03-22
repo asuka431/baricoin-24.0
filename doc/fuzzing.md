@@ -1,12 +1,12 @@
-# Fuzzing Fujicoin Core using libFuzzer
+# Fuzzing Baricoin Core using libFuzzer
 
 ## Quickstart guide
 
-To quickly get started fuzzing Fujicoin Core using [libFuzzer](https://llvm.org/docs/LibFuzzer.html):
+To quickly get started fuzzing Baricoin Core using [libFuzzer](https://llvm.org/docs/LibFuzzer.html):
 
 ```sh
-$ git clone https://github.com/fujicoin/fujicoin
-$ cd fujicoin/
+$ git clone https://github.com/baricoin/baricoin
+$ cd baricoin/
 $ ./autogen.sh
 $ CC=clang CXX=clang++ ./configure --enable-fuzz --with-sanitizers=address,fuzzer,undefined
 # macOS users: If you have problem with this step then make sure to read "macOS hints for
@@ -19,9 +19,9 @@ $ FUZZ=process_message src/test/fuzz/fuzz
 There is also a runner script to execute all fuzz targets. Refer to
 `./test/fuzz/test_runner.py --help` for more details.
 
-## Overview of Fujicoin Core fuzzing
+## Overview of Baricoin Core fuzzing
 
-[Google](https://github.com/google/fuzzing/) has a good overview of fuzzing in general, with contributions from key architects of some of the most-used fuzzers. [This paper](https://agroce.github.io/bitcoin_report.pdf) includes an external overview of the status of Fujicoin Core fuzzing, as of summer 2021.  [John Regehr](https://blog.regehr.org/archives/1687) provides good advice on writing code that assists fuzzers in finding bugs, which is useful for developers to keep in mind.
+[Google](https://github.com/google/fuzzing/) has a good overview of fuzzing in general, with contributions from key architects of some of the most-used fuzzers. [This paper](https://agroce.github.io/bitcoin_report.pdf) includes an external overview of the status of Baricoin Core fuzzing, as of summer 2021.  [John Regehr](https://blog.regehr.org/archives/1687) provides good advice on writing code that assists fuzzers in finding bugs, which is useful for developers to keep in mind.
 
 ## Fuzzing harnesses and output
 
@@ -71,7 +71,7 @@ block^@M-^?M-^?M-^?M-^?M-^?nM-^?M-^?
 
 In this case the fuzzer managed to create a `block` message which when passed to `ProcessMessage(...)` increased coverage.
 
-It is possible to specify `fujicoind` arguments to the `fuzz` executable.
+It is possible to specify `baricoind` arguments to the `fuzz` executable.
 Depending on the test, they may be ignored or consumed and alter the behavior
 of the test. Just make sure to use double-dash to distinguish them from the
 fuzzer's own arguments:
@@ -82,9 +82,9 @@ $ FUZZ=address_deserialize_v2 src/test/fuzz/fuzz -runs=1 fuzz_seed_corpus/addres
 
 ## Fuzzing corpora
 
-The project's collection of seed corpora is found in the [`fujicoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) repo.
+The project's collection of seed corpora is found in the [`baricoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) repo.
 
-To fuzz `process_message` using the [`fujicoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) seed corpus:
+To fuzz `process_message` using the [`baricoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) seed corpus:
 
 ```sh
 $ git clone https://github.com/bitcoin-core/qa-assets
@@ -117,9 +117,9 @@ Fuzzing on a harness compiled with `--with-sanitizers=address,fuzzer,undefined` 
 
 ## Submit improved coverage
 
-If you find coverage increasing inputs when fuzzing you are highly encouraged to submit them for inclusion in the [`fujicoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) repo.
+If you find coverage increasing inputs when fuzzing you are highly encouraged to submit them for inclusion in the [`baricoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) repo.
 
-Every single pull request submitted against the Fujicoin Core repo is automatically tested against all inputs in the [`fujicoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) repo. Contributing new coverage increasing inputs is an easy way to help make Fujicoin Core more robust.
+Every single pull request submitted against the Baricoin Core repo is automatically tested against all inputs in the [`baricoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) repo. Contributing new coverage increasing inputs is an easy way to help make Baricoin Core more robust.
 
 ## macOS hints for libFuzzer
 
@@ -129,7 +129,7 @@ example using `brew install llvm`.
 
 Should you run into problems with the address sanitizer, it is possible you
 may need to run `./configure` with `--disable-asm` to avoid errors
-with certain assembly code from Fujicoin Core's code. See [developer notes on sanitizers](https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md#sanitizers)
+with certain assembly code from Baricoin Core's code. See [developer notes on sanitizers](https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md#sanitizers)
 for more information.
 
 You may also need to take care of giving the correct path for `clang` and
@@ -144,15 +144,15 @@ Full configure that was tested on macOS Catalina with `brew` installed `llvm`:
 
 Read the [libFuzzer documentation](https://llvm.org/docs/LibFuzzer.html) for more information. This [libFuzzer tutorial](https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md) might also be of interest.
 
-# Fuzzing Fujicoin Core using afl++
+# Fuzzing Baricoin Core using afl++
 
 ## Quickstart guide
 
-To quickly get started fuzzing Fujicoin Core using [afl++](https://github.com/AFLplusplus/AFLplusplus):
+To quickly get started fuzzing Baricoin Core using [afl++](https://github.com/AFLplusplus/AFLplusplus):
 
 ```sh
-$ git clone https://github.com/fujicoin/fujicoin
-$ cd fujicoin/
+$ git clone https://github.com/baricoin/baricoin
+$ cd baricoin/
 $ git clone https://github.com/AFLplusplus/AFLplusplus
 $ make -C AFLplusplus/ source-only
 $ ./autogen.sh
@@ -171,15 +171,15 @@ $ FUZZ=bech32 AFLplusplus/afl-fuzz -i inputs/ -o outputs/ -- src/test/fuzz/fuzz
 
 Read the [afl++ documentation](https://github.com/AFLplusplus/AFLplusplus) for more information.
 
-# Fuzzing Fujicoin Core using Honggfuzz
+# Fuzzing Baricoin Core using Honggfuzz
 
 ## Quickstart guide
 
-To quickly get started fuzzing Fujicoin Core using [Honggfuzz](https://github.com/google/honggfuzz):
+To quickly get started fuzzing Baricoin Core using [Honggfuzz](https://github.com/google/honggfuzz):
 
 ```sh
-$ git clone https://github.com/fujicoin/fujicoin
-$ cd fujicoin/
+$ git clone https://github.com/baricoin/baricoin
+$ cd baricoin/
 $ ./autogen.sh
 $ git clone https://github.com/google/honggfuzz
 $ cd honggfuzz/
@@ -193,10 +193,10 @@ $ FUZZ=process_message honggfuzz/honggfuzz -i inputs/ -- src/test/fuzz/fuzz
 
 Read the [Honggfuzz documentation](https://github.com/google/honggfuzz/blob/master/docs/USAGE.md) for more information.
 
-## Fuzzing the Fujicoin Core P2P layer using Honggfuzz NetDriver
+## Fuzzing the Baricoin Core P2P layer using Honggfuzz NetDriver
 
-Honggfuzz NetDriver allows for very easy fuzzing of TCP servers such as Fujicoin
-Core without having to write any custom fuzzing harness. The `fujicoind` server
+Honggfuzz NetDriver allows for very easy fuzzing of TCP servers such as Baricoin
+Core without having to write any custom fuzzing harness. The `baricoind` server
 process is largely fuzzed without modification.
 
 This makes the fuzzing highly realistic: a bug reachable by the fuzzer is likely
@@ -205,10 +205,10 @@ also remotely triggerable by an untrusted peer.
 To quickly get started fuzzing the P2P layer using Honggfuzz NetDriver:
 
 ```sh
-$ mkdir fujicoin-honggfuzz-p2p/
-$ cd fujicoin-honggfuzz-p2p/
-$ git clone https://github.com/fujicoin/fujicoin
-$ cd fujicoin/
+$ mkdir baricoin-honggfuzz-p2p/
+$ cd baricoin-honggfuzz-p2p/
+$ git clone https://github.com/baricoin/baricoin
+$ cd baricoin/
 $ ./autogen.sh
 $ git clone https://github.com/google/honggfuzz
 $ cd honggfuzz/
@@ -219,10 +219,10 @@ $ CC=$(pwd)/honggfuzz/hfuzz_cc/hfuzz-clang \
       ./configure --disable-wallet --with-gui=no \
                   --with-sanitizers=address,undefined
 $ git apply << "EOF"
-diff --git a/src/fujicoind.cpp b/src/fujicoind.cpp
+diff --git a/src/baricoind.cpp b/src/baricoind.cpp
 index 455a82e39..2faa3f80f 100644
---- a/src/fujicoind.cpp
-+++ b/src/fujicoind.cpp
+--- a/src/baricoind.cpp
++++ b/src/baricoind.cpp
 @@ -158,7 +158,11 @@ static bool AppInit(int argc, char* argv[])
      return fRet;
  }
@@ -258,24 +258,24 @@ index cf987b699..636a4176a 100644
                   SanitizeString(msg->m_command), msg->m_message_size,
                   HexStr(Span<uint8_t>(hash.begin(), hash.begin() + CMessageHeader::CHECKSUM_SIZE)),
 EOF
-$ make -C src/ fujicoind
+$ make -C src/ baricoind
 $ mkdir -p inputs/
 $ honggfuzz/honggfuzz --exit_upon_crash --quiet --timeout 4 -n 1 -Q \
       -E HFND_TCP_PORT=18444 -f inputs/ -- \
-          src/fujicoind -regtest -discover=0 -dns=0 -dnsseed=0 -listenonion=0 \
+          src/baricoind -regtest -discover=0 -dns=0 -dnsseed=0 -listenonion=0 \
                        -nodebuglogfile -bind=127.0.0.1:18444 -logthreadnames \
                        -debug
 ```
 
-# Fuzzing Fujicoin Core using Eclipser (v1.x)
+# Fuzzing Baricoin Core using Eclipser (v1.x)
 
 ## Quickstart guide
 
-To quickly get started fuzzing Fujicoin Core using [Eclipser v1.x](https://github.com/SoftSec-KAIST/Eclipser/tree/v1.x):
+To quickly get started fuzzing Baricoin Core using [Eclipser v1.x](https://github.com/SoftSec-KAIST/Eclipser/tree/v1.x):
 
 ```sh
-$ git clone https://github.com/fujicoin/fujicoin
-$ cd fujicoin/
+$ git clone https://github.com/baricoin/baricoin
+$ cd baricoin/
 $ sudo vim /etc/apt/sources.list # Uncomment the lines starting with 'deb-src'.
 $ sudo apt-get update
 $ sudo apt-get build-dep qemu
@@ -336,11 +336,11 @@ Read the [Eclipser documentation for v1.x](https://github.com/SoftSec-KAIST/Ecli
 
 # OSS-Fuzz
 
-Fujicoin Core participates in Google's [OSS-Fuzz](https://github.com/google/oss-fuzz/tree/master/projects/bitcoin-core)
+Baricoin Core participates in Google's [OSS-Fuzz](https://github.com/google/oss-fuzz/tree/master/projects/bitcoin-core)
 program, which includes a dashboard of [publicly disclosed vulnerabilities](https://bugs.chromium.org/p/oss-fuzz/issues/list?q=bitcoin-core).
 Generally, we try to disclose vulnerabilities as soon as possible after they
 are fixed to give users the knowledge they need to be protected. However,
-because Fujicoin is a live P2P network, and not just standalone local software,
+because Baricoin is a live P2P network, and not just standalone local software,
 we might not fully disclose every issue within Google's standard
 [90-day disclosure window](https://google.github.io/oss-fuzz/getting-started/bug-disclosure-guidelines/)
 if a partial or delayed disclosure is important to protect users or the

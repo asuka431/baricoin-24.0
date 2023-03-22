@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_MERKLEBLOCK_H
-#define FUJICOIN_MERKLEBLOCK_H
+#ifndef BARICOIN_MERKLEBLOCK_H
+#define BARICOIN_MERKLEBLOCK_H
 
 #include <common/bloom.h>
 #include <primitives/block.h>
@@ -155,4 +155,4 @@ private:
     CMerkleBlock(const CBlock& block, CBloomFilter* filter, const std::set<uint256>* txids);
 };
 
-#endif // FUJICOIN_MERKLEBLOCK_H
+#endif // BARICOIN_MERKLEBLOCK_H

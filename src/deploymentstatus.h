@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_DEPLOYMENTSTATUS_H
-#define FUJICOIN_DEPLOYMENTSTATUS_H
+#ifndef BARICOIN_DEPLOYMENTSTATUS_H
+#define BARICOIN_DEPLOYMENTSTATUS_H
 
 #include <chain.h>
 #include <versionbits.h>
@@ -49,4 +49,4 @@ inline bool DeploymentEnabled(const Consensus::Params& params, Consensus::Deploy
     return params.vDeployments[dep].nStartTime != Consensus::BIP9Deployment::NEVER_ACTIVE;
 }
 
-#endif // FUJICOIN_DEPLOYMENTSTATUS_H
+#endif // BARICOIN_DEPLOYMENTSTATUS_H

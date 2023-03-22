@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_ZMQ_ZMQUTIL_H
-#define FUJICOIN_ZMQ_ZMQUTIL_H
+#ifndef BARICOIN_ZMQ_ZMQUTIL_H
+#define BARICOIN_ZMQ_ZMQUTIL_H
 
 #include <string>
 
 void zmqError(const std::string& str);
 
-#endif // FUJICOIN_ZMQ_ZMQUTIL_H
+#endif // BARICOIN_ZMQ_ZMQUTIL_H

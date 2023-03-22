@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The Fujicoin Core developers
+# Copyright (c) 2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Stress tests related to node initialization."""
 import os
 from pathlib import Path
 
-from test_framework.test_framework import FujicoinTestFramework, SkipTest
+from test_framework.test_framework import BaricoinTestFramework, SkipTest
 from test_framework.test_node import ErrorMatch
 from test_framework.util import assert_equal
 
 
-class InitStressTest(FujicoinTestFramework):
+class InitStressTest(BaricoinTestFramework):
     """
     Ensure that initialization can be interrupted at a number of points and not impair
     subsequent starts.
@@ -107,7 +107,7 @@ class InitStressTest(FujicoinTestFramework):
             # tweaked_contents[50:250] = b'1' * 200
             # target_file.write_bytes(bytes(tweaked_contents))
             #
-            # At the moment I can't get this to work (fujicoind loads successfully?) so
+            # At the moment I can't get this to work (baricoind loads successfully?) so
             # investigate doing this later.
 
             node.assert_start_raises_init_error(

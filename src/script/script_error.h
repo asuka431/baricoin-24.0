@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_SCRIPT_SCRIPT_ERROR_H
-#define FUJICOIN_SCRIPT_SCRIPT_ERROR_H
+#ifndef BARICOIN_SCRIPT_SCRIPT_ERROR_H
+#define BARICOIN_SCRIPT_SCRIPT_ERROR_H
 
 #include <string>
 
@@ -89,4 +89,4 @@ typedef enum ScriptError_t
 
 std::string ScriptErrorString(const ScriptError error);
 
-#endif // FUJICOIN_SCRIPT_SCRIPT_ERROR_H
+#endif // BARICOIN_SCRIPT_SCRIPT_ERROR_H

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_BDB_H
-#define FUJICOIN_WALLET_BDB_H
+#ifndef BARICOIN_WALLET_BDB_H
+#define BARICOIN_WALLET_BDB_H
 
 #include <clientversion.h>
 #include <fs.h>
@@ -232,4 +232,4 @@ bool BerkeleyDatabaseSanityCheck();
 std::unique_ptr<BerkeleyDatabase> MakeBerkeleyDatabase(const fs::path& path, const DatabaseOptions& options, DatabaseStatus& status, bilingual_str& error);
 } // namespace wallet
 
-#endif // FUJICOIN_WALLET_BDB_H
+#endif // BARICOIN_WALLET_BDB_H

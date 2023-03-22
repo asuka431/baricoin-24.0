@@ -13,7 +13,7 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both fujicoind and fujicoin-qt, to make it harder for attackers to
+ * for both baricoind and baricoin-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
 const std::string CLIENT_NAME("Satoshi");
@@ -82,8 +82,8 @@ std::string CopyrightHolders(const std::string& strPrefix)
     const auto copyright_devs = strprintf(_(COPYRIGHT_HOLDERS).translated, COPYRIGHT_HOLDERS_SUBSTITUTION);
     std::string strCopyrightHolders = strPrefix + copyright_devs;
 
-    // Make sure Fujicoin Core copyright is not removed by accident
-    if (copyright_devs.find("Fujicoin Core") == std::string::npos) {
+    // Make sure Baricoin Core copyright is not removed by accident
+    if (copyright_devs.find("Baricoin Core") == std::string::npos) {
         strCopyrightHolders += "\n" + strPrefix + "The Bitcoin Core developers";
     }
     return strCopyrightHolders;
@@ -91,7 +91,7 @@ std::string CopyrightHolders(const std::string& strPrefix)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/fujicoin/fujicoin>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/baricoin/baricoin>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i").translated, 2009, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +

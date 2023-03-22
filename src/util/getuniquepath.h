@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_GETUNIQUEPATH_H
-#define FUJICOIN_UTIL_GETUNIQUEPATH_H
+#ifndef BARICOIN_UTIL_GETUNIQUEPATH_H
+#define BARICOIN_UTIL_GETUNIQUEPATH_H
 
 #include <fs.h>
 
@@ -16,4 +16,4 @@
  */
 fs::path GetUniquePath(const fs::path& base);
 
-#endif // FUJICOIN_UTIL_GETUNIQUEPATH_H
+#endif // BARICOIN_UTIL_GETUNIQUEPATH_H

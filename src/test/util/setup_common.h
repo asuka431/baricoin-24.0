@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_TEST_UTIL_SETUP_COMMON_H
-#define FUJICOIN_TEST_UTIL_SETUP_COMMON_H
+#ifndef BARICOIN_TEST_UTIL_SETUP_COMMON_H
+#define BARICOIN_TEST_UTIL_SETUP_COMMON_H
 
 #include <chainparamsbase.h>
 #include <fs.h>
@@ -251,4 +251,4 @@ private:
     const std::string m_reason;
 };
 
-#endif // FUJICOIN_TEST_UTIL_SETUP_COMMON_H
+#endif // BARICOIN_TEST_UTIL_SETUP_COMMON_H

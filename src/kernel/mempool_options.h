@@ -1,8 +1,8 @@
 // Copyright (c) 2022 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef FUJICOIN_KERNEL_MEMPOOL_OPTIONS_H
-#define FUJICOIN_KERNEL_MEMPOOL_OPTIONS_H
+#ifndef BARICOIN_KERNEL_MEMPOOL_OPTIONS_H
+#define BARICOIN_KERNEL_MEMPOOL_OPTIONS_H
 
 #include <kernel/mempool_limits.h>
 
@@ -57,4 +57,4 @@ struct MemPoolOptions {
 };
 } // namespace kernel
 
-#endif // FUJICOIN_KERNEL_MEMPOOL_OPTIONS_H
+#endif // BARICOIN_KERNEL_MEMPOOL_OPTIONS_H

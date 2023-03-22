@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_QT_CREATEWALLETDIALOG_H
-#define FUJICOIN_QT_CREATEWALLETDIALOG_H
+#ifndef BARICOIN_QT_CREATEWALLETDIALOG_H
+#define BARICOIN_QT_CREATEWALLETDIALOG_H
 
 #include <QDialog>
 
@@ -43,4 +43,4 @@ private:
     bool m_has_signers = false;
 };
 
-#endif // FUJICOIN_QT_CREATEWALLETDIALOG_H
+#endif // BARICOIN_QT_CREATEWALLETDIALOG_H

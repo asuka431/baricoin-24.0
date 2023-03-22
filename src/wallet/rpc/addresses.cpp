@@ -17,7 +17,7 @@ namespace wallet {
 RPCHelpMan getnewaddress()
 {
     return RPCHelpMan{"getnewaddress",
-                "\nReturns a new Fujicoin address for receiving payments.\n"
+                "\nReturns a new Baricoin address for receiving payments.\n"
                 "If 'label' is specified, it is added to the address book \n"
                 "so payments received with the address will be associated with 'label'.\n",
                 {
@@ -25,7 +25,7 @@ RPCHelpMan getnewaddress()
                     {"address_type", RPCArg::Type::STR, RPCArg::DefaultHint{"set by -addresstype"}, "The address type to use. Options are \"legacy\", \"p2sh-segwit\", \"bech32\", and \"bech32m\"."},
                 },
                 RPCResult{
-                    RPCResult::Type::STR, "address", "The new fujicoin address"
+                    RPCResult::Type::STR, "address", "The new baricoin address"
                 },
                 RPCExamples{
                     HelpExampleCli("getnewaddress", "")
@@ -71,7 +71,7 @@ RPCHelpMan getnewaddress()
 RPCHelpMan getrawchangeaddress()
 {
     return RPCHelpMan{"getrawchangeaddress",
-                "\nReturns a new Fujicoin address, for receiving change.\n"
+                "\nReturns a new Baricoin address, for receiving change.\n"
                 "This is for use with raw transactions, NOT normal use.\n",
                 {
                     {"address_type", RPCArg::Type::STR, RPCArg::DefaultHint{"set by -changetype"}, "The address type to use. Options are \"legacy\", \"p2sh-segwit\", \"bech32\", and \"bech32m\"."},
@@ -120,7 +120,7 @@ RPCHelpMan setlabel()
     return RPCHelpMan{"setlabel",
                 "\nSets the label associated with the given address.\n",
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The fujicoin address to be associated with a label."},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The baricoin address to be associated with a label."},
                     {"label", RPCArg::Type::STR, RPCArg::Optional::NO, "The label to assign to the address."},
                 },
                 RPCResult{RPCResult::Type::NONE, "", ""},
@@ -137,7 +137,7 @@ RPCHelpMan setlabel()
 
     CTxDestination dest = DecodeDestination(request.params[0].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Fujicoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Baricoin address");
     }
 
     std::string label = LabelFromValue(request.params[1]);
@@ -167,7 +167,7 @@ RPCHelpMan listaddressgroupings()
                         {
                             {RPCResult::Type::ARR_FIXED, "", "",
                             {
-                                {RPCResult::Type::STR, "address", "The fujicoin address"},
+                                {RPCResult::Type::STR, "address", "The baricoin address"},
                                 {RPCResult::Type::STR_AMOUNT, "amount", "The amount in " + CURRENCY_UNIT},
                                 {RPCResult::Type::STR, "label", /*optional=*/true, "The label"},
                             }},
@@ -217,15 +217,15 @@ RPCHelpMan addmultisigaddress()
 {
     return RPCHelpMan{"addmultisigaddress",
                 "\nAdd an nrequired-to-sign multisignature address to the wallet. Requires a new wallet backup.\n"
-                "Each key is a Fujicoin address or hex-encoded public key.\n"
+                "Each key is a Baricoin address or hex-encoded public key.\n"
                 "This functionality is only intended for use with non-watchonly addresses.\n"
                 "See `importaddress` for watchonly p2sh address support.\n"
                 "If 'label' is specified, assign address to that label.\n",
                 {
                     {"nrequired", RPCArg::Type::NUM, RPCArg::Optional::NO, "The number of required signatures out of the n keys or addresses."},
-                    {"keys", RPCArg::Type::ARR, RPCArg::Optional::NO, "The fujicoin addresses or hex-encoded public keys",
+                    {"keys", RPCArg::Type::ARR, RPCArg::Optional::NO, "The baricoin addresses or hex-encoded public keys",
                         {
-                            {"key", RPCArg::Type::STR, RPCArg::Optional::OMITTED, "fujicoin address or hex-encoded public key"},
+                            {"key", RPCArg::Type::STR, RPCArg::Optional::OMITTED, "baricoin address or hex-encoded public key"},
                         },
                         },
                     {"label", RPCArg::Type::STR, RPCArg::Optional::OMITTED_NAMED_ARG, "A label to assign the addresses to."},
@@ -494,15 +494,15 @@ static UniValue DescribeWalletAddress(const CWallet& wallet, const CTxDestinatio
 RPCHelpMan getaddressinfo()
 {
     return RPCHelpMan{"getaddressinfo",
-                "\nReturn information about the given fujicoin address.\n"
+                "\nReturn information about the given baricoin address.\n"
                 "Some of the information will only be present if the address is in the active wallet.\n",
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The fujicoin address for which to get information."},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The baricoin address for which to get information."},
                 },
                 RPCResult{
                     RPCResult::Type::OBJ, "", "",
                     {
-                        {RPCResult::Type::STR, "address", "The fujicoin address validated."},
+                        {RPCResult::Type::STR, "address", "The baricoin address validated."},
                         {RPCResult::Type::STR_HEX, "scriptPubKey", "The hex-encoded scriptPubKey generated by the address."},
                         {RPCResult::Type::BOOL, "ismine", "If the address is yours."},
                         {RPCResult::Type::BOOL, "iswatchonly", "If the address is watchonly."},
@@ -751,7 +751,7 @@ RPCHelpMan walletdisplayaddress()
         "walletdisplayaddress",
         "Display address on an external signer for verification.",
         {
-            {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "fujicoin address to display"},
+            {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "baricoin address to display"},
         },
         RPCResult{
             RPCResult::Type::OBJ,"","",

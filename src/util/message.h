@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_MESSAGE_H
-#define FUJICOIN_UTIL_MESSAGE_H
+#ifndef BARICOIN_UTIL_MESSAGE_H
+#define BARICOIN_UTIL_MESSAGE_H
 
 #include <uint256.h>
 
@@ -47,7 +47,7 @@ enum class SigningResult {
 };
 
 /** Verify a signed message.
- * @param[in] address Signer's fujicoin address, it must refer to a public key.
+ * @param[in] address Signer's baricoin address, it must refer to a public key.
  * @param[in] signature The signature in base64 format.
  * @param[in] message The message that was signed.
  * @return result code */
@@ -74,4 +74,4 @@ uint256 MessageHash(const std::string& message);
 
 std::string SigningResultString(const SigningResult res);
 
-#endif // FUJICOIN_UTIL_MESSAGE_H
+#endif // BARICOIN_UTIL_MESSAGE_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_QT_PSBTOPERATIONSDIALOG_H
-#define FUJICOIN_QT_PSBTOPERATIONSDIALOG_H
+#ifndef BARICOIN_QT_PSBTOPERATIONSDIALOG_H
+#define BARICOIN_QT_PSBTOPERATIONSDIALOG_H
 
 #include <QDialog>
 
@@ -51,4 +51,4 @@ private:
     void showTransactionStatus(const PartiallySignedTransaction &psbtx);
 };
 
-#endif // FUJICOIN_QT_PSBTOPERATIONSDIALOG_H
+#endif // BARICOIN_QT_PSBTOPERATIONSDIALOG_H

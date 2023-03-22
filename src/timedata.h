@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_TIMEDATA_H
-#define FUJICOIN_TIMEDATA_H
+#ifndef BARICOIN_TIMEDATA_H
+#define BARICOIN_TIMEDATA_H
 
 #include <util/time.h>
 
@@ -83,4 +83,4 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime);
  */
 void TestOnlyResetTimeData();
 
-#endif // FUJICOIN_TIMEDATA_H
+#endif // BARICOIN_TIMEDATA_H

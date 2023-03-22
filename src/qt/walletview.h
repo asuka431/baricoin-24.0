@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_QT_WALLETVIEW_H
-#define FUJICOIN_QT_WALLETVIEW_H
+#ifndef BARICOIN_QT_WALLETVIEW_H
+#define BARICOIN_QT_WALLETVIEW_H
 
 #include <consensus/amount.h>
-#include <qt/fujicoinunits.h>
+#include <qt/baricoinunits.h>
 
 #include <QStackedWidget>
 
@@ -53,7 +53,7 @@ private:
     ClientModel *clientModel;
 
     //!
-    //! The wallet model represents a fujicoin wallet, and offers access to
+    //! The wallet model represents a baricoin wallet, and offers access to
     //! the list of transactions, address book and sending functionality.
     //!
     WalletModel* const walletModel;
@@ -116,9 +116,9 @@ Q_SIGNALS:
     /** Encryption status of wallet changed */
     void encryptionStatusChanged();
     /** Notify that a new transaction appeared */
-    void incomingTransaction(const QString& date, FujicoinUnit unit, const CAmount& amount, const QString& type, const QString& address, const QString& label, const QString& walletName);
+    void incomingTransaction(const QString& date, BaricoinUnit unit, const CAmount& amount, const QString& type, const QString& address, const QString& label, const QString& walletName);
     /** Notify that the out of sync warning icon has been pressed */
     void outOfSyncWarningClicked();
 };
 
-#endif // FUJICOIN_QT_WALLETVIEW_H
+#endif // BARICOIN_QT_WALLETVIEW_H

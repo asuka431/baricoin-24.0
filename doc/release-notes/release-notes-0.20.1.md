@@ -1,7 +1,7 @@
 0.20.1 Release Notes
 ====================
 
-Fujicoin Core version 0.20.1 is now available from:
+Baricoin Core version 0.20.1 is now available from:
 
   <https://bitcoincore.org/bin/bitcoin-core-0.20.1/>
 
@@ -21,24 +21,24 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes in some cases), then run the
-installer (on Windows) or just copy over `/Applications/Fujicoin-Qt` (on Mac)
-or `fujicoind`/`fujicoin-qt` (on Linux).
+installer (on Windows) or just copy over `/Applications/Baricoin-Qt` (on Mac)
+or `baricoind`/`baricoin-qt` (on Linux).
 
-Upgrading directly from a version of Fujicoin Core that has reached its EOL is
+Upgrading directly from a version of Baricoin Core that has reached its EOL is
 possible, but it might take some time if the data directory needs to be migrated. Old
-wallet versions of Fujicoin Core are generally supported.
+wallet versions of Baricoin Core are generally supported.
 
 Compatibility
 ==============
 
-Fujicoin Core is supported and extensively tested on operating systems
-using the Linux kernel, macOS 10.12+, and Windows 7 and newer.  Fujicoin
+Baricoin Core is supported and extensively tested on operating systems
+using the Linux kernel, macOS 10.12+, and Windows 7 and newer.  Baricoin
 Core should also work on most other Unix-like systems but is not as
-frequently tested on them.  It is not recommended to use Fujicoin Core on
+frequently tested on them.  It is not recommended to use Baricoin Core on
 unsupported systems.
 
-From Fujicoin Core 0.20.0 onwards, macOS versions earlier than 10.12 are no
-longer supported. Additionally, Fujicoin Core does not yet change appearance
+From Baricoin Core 0.20.0 onwards, macOS versions earlier than 10.12 are no
+longer supported. Additionally, Baricoin Core does not yet change appearance
 when macOS "dark mode" is activated.
 
 Known Bugs
@@ -53,7 +53,7 @@ this release:
   `./configure`. This is the same as when checking out from git.
 
 - Instead of running `make` simply, you should instead run
-  `FUJICOIN_GENBUILD_NO_GIT=1 make`.
+  `BARICOIN_GENBUILD_NO_GIT=1 make`.
 
 Notable changes
 ===============

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_EXTERNAL_SIGNER_H
-#define FUJICOIN_EXTERNAL_SIGNER_H
+#ifndef BARICOIN_EXTERNAL_SIGNER_H
+#define BARICOIN_EXTERNAL_SIGNER_H
 
 #include <univalue.h>
 #include <util/system.h>
@@ -21,7 +21,7 @@ private:
     //! The command which handles interaction with the external signer.
     std::string m_command;
 
-    //! Fujicoin mainnet, testnet, etc
+    //! Baricoin mainnet, testnet, etc
     std::string m_chain;
 
     const std::string NetworkArg() const;
@@ -63,4 +63,4 @@ public:
     bool SignTransaction(PartiallySignedTransaction& psbt, std::string& error);
 };
 
-#endif // FUJICOIN_EXTERNAL_SIGNER_H
+#endif // BARICOIN_EXTERNAL_SIGNER_H

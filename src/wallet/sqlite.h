@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_SQLITE_H
-#define FUJICOIN_WALLET_SQLITE_H
+#ifndef BARICOIN_WALLET_SQLITE_H
+#define BARICOIN_WALLET_SQLITE_H
 
 #include <wallet/db.h>
 
@@ -121,4 +121,4 @@ std::unique_ptr<SQLiteDatabase> MakeSQLiteDatabase(const fs::path& path, const D
 std::string SQLiteDatabaseVersion();
 } // namespace wallet
 
-#endif // FUJICOIN_WALLET_SQLITE_H
+#endif // BARICOIN_WALLET_SQLITE_H

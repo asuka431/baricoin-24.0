@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The Fujicoin Core developers
+# Copyright (c) 2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-""" Interactive fujicoind P2P network traffic monitor utilizing USDT and the
+""" Interactive baricoind P2P network traffic monitor utilizing USDT and the
     net:inbound_message and net:outbound_message tracepoints. """
 
-# This script demonstrates what USDT for Fujicoin Core can enable. It uses BCC
+# This script demonstrates what USDT for Baricoin Core can enable. It uses BCC
 # (https://github.com/iovisor/bcc) to load a sandboxed eBPF program into the
 # Linux kernel (root privileges are required). The eBPF program attaches to two
 # statically defined tracepoints. The tracepoint 'net:inbound_message' is called
@@ -115,17 +115,17 @@ class Peer:
             self.total_outbound_msgs += 1
 
 
-def main(fujicoind_path):
+def main(baricoind_path):
     peers = dict()
 
-    fujicoind_with_usdts = USDT(path=str(fujicoind_path))
+    baricoind_with_usdts = USDT(path=str(baricoind_path))
 
     # attaching the trace functions defined in the BPF program to the tracepoints
-    fujicoind_with_usdts.enable_probe(
+    baricoind_with_usdts.enable_probe(
         probe="inbound_message", fn_name="trace_inbound_message")
-    fujicoind_with_usdts.enable_probe(
+    baricoind_with_usdts.enable_probe(
         probe="outbound_message", fn_name="trace_outbound_message")
-    bpf = BPF(text=program, usdt_contexts=[fujicoind_with_usdts])
+    bpf = BPF(text=program, usdt_contexts=[baricoind_with_usdts])
 
     # BCC: perf buffer handle function for inbound_messages
     def handle_inbound(_, data, size):
@@ -247,7 +247,7 @@ def render(screen, peers, cur_list_pos, scroll, ROWS_AVALIABLE_FOR_LIST, info_pa
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("USAGE:", sys.argv[0], "path/to/fujicoind")
+        print("USAGE:", sys.argv[0], "path/to/baricoind")
         exit()
     path = sys.argv[1]
     main(path)

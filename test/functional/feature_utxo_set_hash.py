@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020-2021 The Fujicoin Core developers
+# Copyright (c) 2020-2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test UTXO set hash value calculation in gettxoutsetinfo."""
@@ -12,11 +12,11 @@ from test_framework.messages import (
     from_hex,
 )
 from test_framework.muhash import MuHash3072
-from test_framework.test_framework import FujicoinTestFramework
+from test_framework.test_framework import BaricoinTestFramework
 from test_framework.util import assert_equal
 from test_framework.wallet import MiniWallet
 
-class UTXOSetHashTest(FujicoinTestFramework):
+class UTXOSetHashTest(BaricoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

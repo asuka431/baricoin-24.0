@@ -5,7 +5,7 @@
 #include <qt/overviewpage.h>
 #include <qt/forms/ui_overviewpage.h>
 
-#include <qt/fujicoinunits.h>
+#include <qt/baricoinunits.h>
 #include <qt/clientmodel.h>
 #include <qt/guiconstants.h>
 #include <qt/guiutil.h>
@@ -93,7 +93,7 @@ public:
             foreground = option.palette.color(QPalette::Text);
         }
         painter->setPen(foreground);
-        QString amountText = FujicoinUnits::formatWithUnit(unit, amount, true, FujicoinUnits::SeparatorStyle::ALWAYS);
+        QString amountText = BaricoinUnits::formatWithUnit(unit, amount, true, BaricoinUnits::SeparatorStyle::ALWAYS);
         if(!confirmed)
         {
             amountText = QString("[") + amountText + QString("]");
@@ -124,7 +124,7 @@ public:
         return {DECORATION_SIZE + 8 + minimum_text_width, DECORATION_SIZE};
     }
 
-    FujicoinUnit unit{FujicoinUnit::FJC};
+    BaricoinUnit unit{BaricoinUnit::BARI};
 
 Q_SIGNALS:
     //! An intermediate signal for emitting from the `paint() const` member function.
@@ -195,28 +195,28 @@ OverviewPage::~OverviewPage()
 
 void OverviewPage::setBalance(const interfaces::WalletBalances& balances)
 {
-    FujicoinUnit unit = walletModel->getOptionsModel()->getDisplayUnit();
+    BaricoinUnit unit = walletModel->getOptionsModel()->getDisplayUnit();
     if (walletModel->wallet().isLegacy()) {
         if (walletModel->wallet().privateKeysDisabled()) {
-            ui->labelBalance->setText(FujicoinUnits::formatWithPrivacy(unit, balances.watch_only_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelUnconfirmed->setText(FujicoinUnits::formatWithPrivacy(unit, balances.unconfirmed_watch_only_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelImmature->setText(FujicoinUnits::formatWithPrivacy(unit, balances.immature_watch_only_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelTotal->setText(FujicoinUnits::formatWithPrivacy(unit, balances.watch_only_balance + balances.unconfirmed_watch_only_balance + balances.immature_watch_only_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelBalance->setText(BaricoinUnits::formatWithPrivacy(unit, balances.watch_only_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelUnconfirmed->setText(BaricoinUnits::formatWithPrivacy(unit, balances.unconfirmed_watch_only_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelImmature->setText(BaricoinUnits::formatWithPrivacy(unit, balances.immature_watch_only_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelTotal->setText(BaricoinUnits::formatWithPrivacy(unit, balances.watch_only_balance + balances.unconfirmed_watch_only_balance + balances.immature_watch_only_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
         } else {
-            ui->labelBalance->setText(FujicoinUnits::formatWithPrivacy(unit, balances.balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelUnconfirmed->setText(FujicoinUnits::formatWithPrivacy(unit, balances.unconfirmed_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelImmature->setText(FujicoinUnits::formatWithPrivacy(unit, balances.immature_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelTotal->setText(FujicoinUnits::formatWithPrivacy(unit, balances.balance + balances.unconfirmed_balance + balances.immature_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelWatchAvailable->setText(FujicoinUnits::formatWithPrivacy(unit, balances.watch_only_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelWatchPending->setText(FujicoinUnits::formatWithPrivacy(unit, balances.unconfirmed_watch_only_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelWatchImmature->setText(FujicoinUnits::formatWithPrivacy(unit, balances.immature_watch_only_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelWatchTotal->setText(FujicoinUnits::formatWithPrivacy(unit, balances.watch_only_balance + balances.unconfirmed_watch_only_balance + balances.immature_watch_only_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelBalance->setText(BaricoinUnits::formatWithPrivacy(unit, balances.balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelUnconfirmed->setText(BaricoinUnits::formatWithPrivacy(unit, balances.unconfirmed_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelImmature->setText(BaricoinUnits::formatWithPrivacy(unit, balances.immature_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelTotal->setText(BaricoinUnits::formatWithPrivacy(unit, balances.balance + balances.unconfirmed_balance + balances.immature_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelWatchAvailable->setText(BaricoinUnits::formatWithPrivacy(unit, balances.watch_only_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelWatchPending->setText(BaricoinUnits::formatWithPrivacy(unit, balances.unconfirmed_watch_only_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelWatchImmature->setText(BaricoinUnits::formatWithPrivacy(unit, balances.immature_watch_only_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelWatchTotal->setText(BaricoinUnits::formatWithPrivacy(unit, balances.watch_only_balance + balances.unconfirmed_watch_only_balance + balances.immature_watch_only_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
         }
     } else {
-        ui->labelBalance->setText(FujicoinUnits::formatWithPrivacy(unit, balances.balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-        ui->labelUnconfirmed->setText(FujicoinUnits::formatWithPrivacy(unit, balances.unconfirmed_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-        ui->labelImmature->setText(FujicoinUnits::formatWithPrivacy(unit, balances.immature_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
-        ui->labelTotal->setText(FujicoinUnits::formatWithPrivacy(unit, balances.balance + balances.unconfirmed_balance + balances.immature_balance, FujicoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+        ui->labelBalance->setText(BaricoinUnits::formatWithPrivacy(unit, balances.balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+        ui->labelUnconfirmed->setText(BaricoinUnits::formatWithPrivacy(unit, balances.unconfirmed_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+        ui->labelImmature->setText(BaricoinUnits::formatWithPrivacy(unit, balances.immature_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
+        ui->labelTotal->setText(BaricoinUnits::formatWithPrivacy(unit, balances.balance + balances.unconfirmed_balance + balances.immature_balance, BaricoinUnits::SeparatorStyle::ALWAYS, m_privacy));
     }
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users
@@ -286,7 +286,7 @@ void OverviewPage::setWalletModel(WalletModel *model)
         });
     }
 
-    // update the display unit, to not use the default ("FJC")
+    // update the display unit, to not use the default ("BARI")
     updateDisplayUnit();
 }
 

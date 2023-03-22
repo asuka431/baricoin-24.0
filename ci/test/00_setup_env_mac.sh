@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright (c) 2019-2021 The Fujicoin Core developers
+# Copyright (c) 2019-2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,4 +15,4 @@ export XCODE_BUILD_ID=12B45b
 export RUN_UNIT_TESTS=false
 export RUN_FUNCTIONAL_TESTS=false
 export GOAL="deploy"
-export FUJICOIN_CONFIG="--with-gui --enable-reduce-exports"
+export BARICOIN_CONFIG="--with-gui --enable-reduce-exports"

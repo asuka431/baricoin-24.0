@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_IPC_PROCESS_H
-#define FUJICOIN_IPC_PROCESS_H
+#ifndef BARICOIN_IPC_PROCESS_H
+#define BARICOIN_IPC_PROCESS_H
 
 #include <memory>
 #include <string>
@@ -11,7 +11,7 @@
 namespace ipc {
 class Protocol;
 
-//! IPC process interface for spawning fujicoin processes and serving requests
+//! IPC process interface for spawning baricoin processes and serving requests
 //! in processes that have been spawned.
 //!
 //! There will be different implementations of this interface depending on the
@@ -39,4 +39,4 @@ public:
 std::unique_ptr<Process> MakeProcess();
 } // namespace ipc
 
-#endif // FUJICOIN_IPC_PROCESS_H
+#endif // BARICOIN_IPC_PROCESS_H

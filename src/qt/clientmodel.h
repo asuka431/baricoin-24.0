@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_QT_CLIENTMODEL_H
-#define FUJICOIN_QT_CLIENTMODEL_H
+#ifndef BARICOIN_QT_CLIENTMODEL_H
+#define BARICOIN_QT_CLIENTMODEL_H
 
 #include <QObject>
 #include <QDateTime>
@@ -50,7 +50,7 @@ enum NumConnections {
     CONNECTIONS_ALL  = (CONNECTIONS_IN | CONNECTIONS_OUT),
 };
 
-/** Model for Fujicoin network client. */
+/** Model for Baricoin network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT
@@ -130,4 +130,4 @@ Q_SIGNALS:
     void showProgress(const QString &title, int nProgress);
 };
 
-#endif // FUJICOIN_QT_CLIENTMODEL_H
+#endif // BARICOIN_QT_CLIENTMODEL_H

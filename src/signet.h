@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_SIGNET_H
-#define FUJICOIN_SIGNET_H
+#ifndef BARICOIN_SIGNET_H
+#define BARICOIN_SIGNET_H
 
 #include <consensus/params.h>
 #include <primitives/block.h>
@@ -34,4 +34,4 @@ public:
     const CTransaction m_to_sign;
 };
 
-#endif // FUJICOIN_SIGNET_H
+#endif // BARICOIN_SIGNET_H

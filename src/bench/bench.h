@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_BENCH_BENCH_H
-#define FUJICOIN_BENCH_BENCH_H
+#ifndef BARICOIN_BENCH_BENCH_H
+#define BARICOIN_BENCH_BENCH_H
 
 #include <fs.h>
 #include <util/macros.h>
@@ -67,4 +67,4 @@ public:
 #define BENCHMARK(n) \
     benchmark::BenchRunner PASTE2(bench_, PASTE2(__LINE__, n))(STRINGIZE(n), n);
 
-#endif // FUJICOIN_BENCH_BENCH_H
+#endif // BARICOIN_BENCH_BENCH_H

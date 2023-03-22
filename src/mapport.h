@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_MAPPORT_H
-#define FUJICOIN_MAPPORT_H
+#ifndef BARICOIN_MAPPORT_H
+#define BARICOIN_MAPPORT_H
 
 #ifdef USE_UPNP
 static constexpr bool DEFAULT_UPNP = USE_UPNP;
@@ -27,4 +27,4 @@ void StartMapPort(bool use_upnp, bool use_natpmp);
 void InterruptMapPort();
 void StopMapPort();
 
-#endif // FUJICOIN_MAPPORT_H
+#endif // BARICOIN_MAPPORT_H

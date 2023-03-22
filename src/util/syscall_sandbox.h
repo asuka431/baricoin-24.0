@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_SYSCALL_SANDBOX_H
-#define FUJICOIN_UTIL_SYSCALL_SANDBOX_H
+#ifndef BARICOIN_UTIL_SYSCALL_SANDBOX_H
+#define BARICOIN_UTIL_SYSCALL_SANDBOX_H
 
 enum class SyscallSandboxPolicy {
     // 1. Initialization
@@ -36,9 +36,9 @@ enum class SyscallSandboxPolicy {
 //!
 //! This function is a no-op unless SetupSyscallSandbox(...) has been called.
 //!
-//! SetupSyscallSandbox(...) is called during fujicoind initialization if Fujicoin Core was compiled
+//! SetupSyscallSandbox(...) is called during baricoind initialization if Baricoin Core was compiled
 //! with seccomp-bpf support (--with-seccomp) *and* the parameter -sandbox=<mode> was passed to
-//! fujicoind.
+//! baricoind.
 //!
 //! This experimental feature is available under Linux x86_64 only.
 void SetSyscallSandboxPolicy(SyscallSandboxPolicy syscall_policy);
@@ -51,4 +51,4 @@ void SetSyscallSandboxPolicy(SyscallSandboxPolicy syscall_policy);
 void TestDisallowedSandboxCall();
 #endif // defined(USE_SYSCALL_SANDBOX)
 
-#endif // FUJICOIN_UTIL_SYSCALL_SANDBOX_H
+#endif // BARICOIN_UTIL_SYSCALL_SANDBOX_H

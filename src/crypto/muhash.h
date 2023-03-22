@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_CRYPTO_MUHASH_H
-#define FUJICOIN_CRYPTO_MUHASH_H
+#ifndef BARICOIN_CRYPTO_MUHASH_H
+#define BARICOIN_CRYPTO_MUHASH_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <serialize.h>
@@ -128,4 +128,4 @@ public:
     }
 };
 
-#endif // FUJICOIN_CRYPTO_MUHASH_H
+#endif // BARICOIN_CRYPTO_MUHASH_H

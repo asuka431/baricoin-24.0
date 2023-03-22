@@ -3,12 +3,12 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <qt/optionsmodel.h>
 
-#include <qt/fujicoinunits.h>
+#include <qt/baricoinunits.h>
 #include <qt/guiconstants.h>
 #include <qt/guiutil.h>
 
@@ -58,7 +58,7 @@ static const char* SettingName(OptionsModel::OptionID option)
     }
 }
 
-/** Call node.updateRwSetting() with Fujicoin 22.x workaround. */
+/** Call node.updateRwSetting() with Baricoin 22.x workaround. */
 static void UpdateRwSetting(interfaces::Node& node, OptionsModel::OptionID option, const util::SettingsValue& value)
 {
     if (value.isNum() &&
@@ -67,33 +67,33 @@ static void UpdateRwSetting(interfaces::Node& node, OptionsModel::OptionID optio
          option == OptionsModel::Prune ||
          option == OptionsModel::PruneSize)) {
         // Write certain old settings as strings, even though they are numbers,
-        // because Fujicoin 22.x releases try to read these specific settings as
+        // because Baricoin 22.x releases try to read these specific settings as
         // strings in addOverriddenOption() calls at startup, triggering
         // uncaught exceptions in UniValue::get_str(). These errors were fixed
         // in later releases by https://github.com/bitcoin/bitcoin/pull/24498.
         // If new numeric settings are added, they can be written as numbers
-        // instead of strings, because fujicoin 22.x will not try to read these.
+        // instead of strings, because baricoin 22.x will not try to read these.
         node.updateRwSetting(SettingName(option), value.getValStr());
     } else {
         node.updateRwSetting(SettingName(option), value);
     }
 }
 
-//! Convert enabled/size values to fujicoin -prune setting.
+//! Convert enabled/size values to baricoin -prune setting.
 static util::SettingsValue PruneSetting(bool prune_enabled, int prune_size_gb)
 {
     assert(!prune_enabled || prune_size_gb >= 1); // PruneSizeGB and ParsePruneSizeGB never return less
     return prune_enabled ? PruneGBtoMiB(prune_size_gb) : 0;
 }
 
-//! Get pruning enabled value to show in GUI from fujicoin -prune setting.
+//! Get pruning enabled value to show in GUI from baricoin -prune setting.
 static bool PruneEnabled(const util::SettingsValue& prune_setting)
 {
     // -prune=1 setting is manual pruning mode, so disabled for purposes of the gui
     return SettingToInt(prune_setting, 0) > 1;
 }
 
-//! Get pruning size value to show in GUI from fujicoin -prune setting. If
+//! Get pruning size value to show in GUI from baricoin -prune setting. If
 //! pruning is not enabled, just show default recommended pruning size (2GB).
 static int PruneSizeGB(const util::SettingsValue& prune_setting)
 {
@@ -165,15 +165,15 @@ bool OptionsModel::Init(bilingual_str& error)
     fMinimizeOnClose = settings.value("fMinimizeOnClose").toBool();
 
     // Display
-    if (!settings.contains("DisplayFujicoinUnit")) {
-        settings.setValue("DisplayFujicoinUnit", QVariant::fromValue(FujicoinUnit::FJC));
+    if (!settings.contains("DisplayBaricoinUnit")) {
+        settings.setValue("DisplayBaricoinUnit", QVariant::fromValue(BaricoinUnit::BARI));
     }
-    QVariant unit = settings.value("DisplayFujicoinUnit");
-    if (unit.canConvert<FujicoinUnit>()) {
-        m_display_fujicoin_unit = unit.value<FujicoinUnit>();
+    QVariant unit = settings.value("DisplayBaricoinUnit");
+    if (unit.canConvert<BaricoinUnit>()) {
+        m_display_baricoin_unit = unit.value<BaricoinUnit>();
     } else {
-        m_display_fujicoin_unit = FujicoinUnit::FJC;
-        settings.setValue("DisplayFujicoinUnit", QVariant::fromValue(m_display_fujicoin_unit));
+        m_display_baricoin_unit = BaricoinUnit::BARI;
+        settings.setValue("DisplayBaricoinUnit", QVariant::fromValue(m_display_baricoin_unit));
     }
 
     if (!settings.contains("strThirdPartyTxUrls"))
@@ -326,7 +326,7 @@ void OptionsModel::SetPruneTargetGB(int prune_target_gb)
     node().forceSetting("prune", new_value);
 
     // Update settings.json if value configured in intro screen is different
-    // from saved value. Avoid writing settings.json if fujicoin.conf value
+    // from saved value. Avoid writing settings.json if baricoin.conf value
     // doesn't need to be overridden.
     if (PruneEnabled(cur_value) != PruneEnabled(new_value) ||
         PruneSizeGB(cur_value) != PruneSizeGB(new_value)) {
@@ -412,7 +412,7 @@ QVariant OptionsModel::getOption(OptionID option) const
         return m_sub_fee_from_amount;
 #endif
     case DisplayUnit:
-        return QVariant::fromValue(m_display_fujicoin_unit);
+        return QVariant::fromValue(m_display_baricoin_unit);
     case ThirdPartyTxUrls:
         return strThirdPartyTxUrls;
     case Language:
@@ -621,11 +621,11 @@ bool OptionsModel::setOption(OptionID option, const QVariant& value)
 
 void OptionsModel::setDisplayUnit(const QVariant& new_unit)
 {
-    if (new_unit.isNull() || new_unit.value<FujicoinUnit>() == m_display_fujicoin_unit) return;
-    m_display_fujicoin_unit = new_unit.value<FujicoinUnit>();
+    if (new_unit.isNull() || new_unit.value<BaricoinUnit>() == m_display_baricoin_unit) return;
+    m_display_baricoin_unit = new_unit.value<BaricoinUnit>();
     QSettings settings;
-    settings.setValue("DisplayFujicoinUnit", QVariant::fromValue(m_display_fujicoin_unit));
-    Q_EMIT displayUnitChanged(m_display_fujicoin_unit);
+    settings.setValue("DisplayBaricoinUnit", QVariant::fromValue(m_display_baricoin_unit));
+    Q_EMIT displayUnitChanged(m_display_baricoin_unit);
 }
 
 void OptionsModel::setRestartRequired(bool fRequired)

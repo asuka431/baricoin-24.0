@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_COINSELECTION_H
-#define FUJICOIN_WALLET_COINSELECTION_H
+#ifndef BARICOIN_WALLET_COINSELECTION_H
+#define BARICOIN_WALLET_COINSELECTION_H
 
 #include <consensus/amount.h>
 #include <policy/feerate.h>
@@ -362,4 +362,4 @@ std::optional<SelectionResult> KnapsackSolver(std::vector<OutputGroup>& groups, 
                                               CAmount change_target, FastRandomContext& rng);
 } // namespace wallet
 
-#endif // FUJICOIN_WALLET_COINSELECTION_H
+#endif // BARICOIN_WALLET_COINSELECTION_H

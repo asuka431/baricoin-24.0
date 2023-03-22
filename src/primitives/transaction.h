@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_PRIMITIVES_TRANSACTION_H
-#define FUJICOIN_PRIMITIVES_TRANSACTION_H
+#ifndef BARICOIN_PRIMITIVES_TRANSACTION_H
+#define BARICOIN_PRIMITIVES_TRANSACTION_H
 
 #include <consensus/amount.h>
 #include <prevector.h>
@@ -430,4 +430,4 @@ public:
     friend bool operator<(const GenTxid& a, const GenTxid& b) { return std::tie(a.m_is_wtxid, a.m_hash) < std::tie(b.m_is_wtxid, b.m_hash); }
 };
 
-#endif // FUJICOIN_PRIMITIVES_TRANSACTION_H
+#endif // BARICOIN_PRIMITIVES_TRANSACTION_H

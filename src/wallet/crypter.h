@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_CRYPTER_H
-#define FUJICOIN_WALLET_CRYPTER_H
+#ifndef BARICOIN_WALLET_CRYPTER_H
+#define BARICOIN_WALLET_CRYPTER_H
 
 #include <serialize.h>
 #include <support/allocators/secure.h>
@@ -108,4 +108,4 @@ bool DecryptSecret(const CKeyingMaterial& vMasterKey, const std::vector<unsigned
 bool DecryptKey(const CKeyingMaterial& vMasterKey, const std::vector<unsigned char>& vchCryptedSecret, const CPubKey& vchPubKey, CKey& key);
 } // namespace wallet
 
-#endif // FUJICOIN_WALLET_CRYPTER_H
+#endif // BARICOIN_WALLET_CRYPTER_H

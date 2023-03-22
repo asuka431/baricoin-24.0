@@ -3,12 +3,12 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <interfaces/init.h>
 #include <interfaces/node.h>
-#include <qt/fujicoin.h>
+#include <qt/baricoin.h>
 #include <qt/test/apptests.h>
 #include <qt/test/optiontests.h>
 #include <qt/test/rpcnestedtests.h>
@@ -81,8 +81,8 @@ int main(int argc, char* argv[])
 
     // Don't remove this, it's needed to access
     // QApplication:: and QCoreApplication:: in the tests
-    FujicoinApplication app;
-    app.setApplicationName("Fujicoin-Qt-test");
+    BaricoinApplication app;
+    app.setApplicationName("Baricoin-Qt-test");
     app.createNode(*init);
 
     int num_test_failures{0};

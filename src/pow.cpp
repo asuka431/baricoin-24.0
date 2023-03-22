@@ -120,7 +120,7 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nF
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     arith_uint256 bnNew;
     bnNew.SetCompact(pindexLast->nBits);
-    // Fujicoin: intermediate uint256 can overflow by 1 bit
+    // Baricoin: intermediate uint256 can overflow by 1 bit
     bool fShift = bnNew.bits() > 235;
     if (fShift)
         bnNew >>= 1;

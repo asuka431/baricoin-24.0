@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_SOCK_H
-#define FUJICOIN_UTIL_SOCK_H
+#ifndef BARICOIN_UTIL_SOCK_H
+#define BARICOIN_UTIL_SOCK_H
 
 #include <compat/compat.h>
 #include <threadinterrupt.h>
@@ -270,4 +270,4 @@ private:
 /** Return readable error string for a network error code */
 std::string NetworkErrorString(int err);
 
-#endif // FUJICOIN_UTIL_SOCK_H
+#endif // BARICOIN_UTIL_SOCK_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_SYSERROR_H
-#define FUJICOIN_UTIL_SYSERROR_H
+#ifndef BARICOIN_UTIL_SYSERROR_H
+#define BARICOIN_UTIL_SYSERROR_H
 
 #include <string>
 
@@ -13,4 +13,4 @@
  */
 std::string SysErrorString(int err);
 
-#endif // FUJICOIN_UTIL_SYSERROR_H
+#endif // BARICOIN_UTIL_SYSERROR_H

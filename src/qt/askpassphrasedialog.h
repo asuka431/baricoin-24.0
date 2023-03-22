@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_QT_ASKPASSPHRASEDIALOG_H
-#define FUJICOIN_QT_ASKPASSPHRASEDIALOG_H
+#ifndef BARICOIN_QT_ASKPASSPHRASEDIALOG_H
+#define BARICOIN_QT_ASKPASSPHRASEDIALOG_H
 
 #include <QDialog>
 
@@ -52,4 +52,4 @@ protected:
     bool eventFilter(QObject *object, QEvent *event) override;
 };
 
-#endif // FUJICOIN_QT_ASKPASSPHRASEDIALOG_H
+#endif // BARICOIN_QT_ASKPASSPHRASEDIALOG_H

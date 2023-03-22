@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_RPC_UTIL_H
-#define FUJICOIN_WALLET_RPC_UTIL_H
+#ifndef BARICOIN_WALLET_RPC_UTIL_H
+#define BARICOIN_WALLET_RPC_UTIL_H
 
 #include <script/script.h>
 
@@ -47,4 +47,4 @@ void PushParentDescriptors(const CWallet& wallet, const CScript& script_pubkey, 
 void HandleWalletError(const std::shared_ptr<CWallet> wallet, DatabaseStatus& status, bilingual_str& error);
 } //  namespace wallet
 
-#endif // FUJICOIN_WALLET_RPC_UTIL_H
+#endif // BARICOIN_WALLET_RPC_UTIL_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_IPC_CONTEXT_H
-#define FUJICOIN_IPC_CONTEXT_H
+#ifndef BARICOIN_IPC_CONTEXT_H
+#define BARICOIN_IPC_CONTEXT_H
 
 namespace ipc {
 //! Context struct used to give IPC protocol implementations or implementation
@@ -16,4 +16,4 @@ struct Context
 };
 } // namespace ipc
 
-#endif // FUJICOIN_IPC_CONTEXT_H
+#endif // BARICOIN_IPC_CONTEXT_H

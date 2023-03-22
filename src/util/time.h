@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_TIME_H
-#define FUJICOIN_UTIL_TIME_H
+#ifndef BARICOIN_UTIL_TIME_H
+#define BARICOIN_UTIL_TIME_H
 
 #include <compat/compat.h>
 
@@ -124,4 +124,4 @@ struct timeval MillisToTimeval(std::chrono::milliseconds ms);
 /** Sanity check epoch match normal Unix epoch */
 bool ChronoSanityCheck();
 
-#endif // FUJICOIN_UTIL_TIME_H
+#endif // BARICOIN_UTIL_TIME_H

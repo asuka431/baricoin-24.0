@@ -1,6 +1,6 @@
-# User-space, Statically Defined Tracing (USDT) for Fujicoin Core
+# User-space, Statically Defined Tracing (USDT) for Baricoin Core
 
-Fujicoin Core includes statically defined tracepoints to allow for more
+Baricoin Core includes statically defined tracepoints to allow for more
 observability during development, debugging, code review, and production usage.
 These tracepoints make it possible to keep track of custom statistics and
 enable detailed monitoring of otherwise hidden internals. They have
@@ -11,7 +11,7 @@ eBPF and USDT Overview
 ======================
 
                 ┌──────────────────┐            ┌──────────────┐
-                │ tracing script   │            │ fujicoind     │
+                │ tracing script   │            │ baricoind     │
                 │==================│      2.    │==============│
                 │  eBPF  │ tracing │      hooks │              │
                 │  code  │ logic   │      into┌─┤►tracepoint 1─┼───┐ 3.
@@ -112,7 +112,7 @@ Arguments passed:
 
 The following tracepoints cover the in-memory UTXO cache. UTXOs are, for example,
 added to and removed (spent) from the cache when we connect a new block.
-**Note**: Fujicoin Core uses temporary clones of the _main_ UTXO cache
+**Note**: Baricoin Core uses temporary clones of the _main_ UTXO cache
 (`chainstate.CoinsTip()`). For example, the RPCs `generateblock` and
 `getblocktemplate` call `TestBlockValidity()`, which applies the UTXO set
 changes to a temporary cache. Similarly, mempool consistency checks, which are
@@ -211,7 +211,7 @@ Arguments passed:
 4. The expected transaction fee as an `int64`
 5. The position of the change output as an `int32`
 
-## Adding tracepoints to Fujicoin Core
+## Adding tracepoints to Baricoin Core
 
 To add a new tracepoint, `#include <util/trace.h>` in the compilation unit where
 the tracepoint is inserted. Use one of the `TRACEx` macros listed below
@@ -306,31 +306,31 @@ maximum expected string size if known.
 
 ## Listing available tracepoints
 
-Multiple tools can list the available tracepoints in a `fujicoind` binary with
+Multiple tools can list the available tracepoints in a `baricoind` binary with
 USDT support.
 
 ### GDB - GNU Project Debugger
 
-To list probes in Fujicoin Core, use `info probes` in `gdb`:
+To list probes in Baricoin Core, use `info probes` in `gdb`:
 
 ```
-$ gdb ./src/fujicoind
+$ gdb ./src/baricoind
 …
 (gdb) info probes
 Type Provider   Name             Where              Semaphore Object
-stap net        inbound_message  0x000000000014419e /src/fujicoind
-stap net        outbound_message 0x0000000000107c05 /src/fujicoind
-stap validation block_connected  0x00000000002fb10c /src/fujicoind
+stap net        inbound_message  0x000000000014419e /src/baricoind
+stap net        outbound_message 0x0000000000107c05 /src/baricoind
+stap validation block_connected  0x00000000002fb10c /src/baricoind
 …
 ```
 
 ### With `readelf`
 
-The `readelf` tool can be used to display the USDT tracepoints in Fujicoin Core.
+The `readelf` tool can be used to display the USDT tracepoints in Baricoin Core.
 Look for the notes with the description `NT_STAPSDT`.
 
 ```
-$ readelf -n ./src/fujicoind | grep NT_STAPSDT -A 4 -B 2
+$ readelf -n ./src/baricoind | grep NT_STAPSDT -A 4 -B 2
 Displaying notes found in: .note.stapsdt
   Owner                 Data size	Description
   stapsdt              0x0000005d	NT_STAPSDT (SystemTap probe descriptors)
@@ -354,7 +354,7 @@ between distributions. For example, on
 [ubuntu binary]: https://github.com/iovisor/bcc/blob/master/INSTALL.md#ubuntu---binary
 
 ```
-$ tplist -l ./src/fujicoind -v
+$ tplist -l ./src/baricoind -v
 b'net':b'outbound_message' [sema 0x0]
   1 location(s)
   6 argument(s)

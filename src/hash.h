@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_HASH_H
-#define FUJICOIN_HASH_H
+#ifndef BARICOIN_HASH_H
+#define BARICOIN_HASH_H
 
 #include <crypto/common.h>
 #include <crypto/ripemd160.h>
@@ -19,7 +19,7 @@
 
 typedef uint256 ChainCode;
 
-/** A hasher class for Fujicoin's 256-bit hash (double SHA-256). */
+/** A hasher class for Baricoin's 256-bit hash (double SHA-256). */
 class CHash256 {
 private:
     CSHA256 sha;
@@ -44,7 +44,7 @@ public:
     }
 };
 
-/** A hasher class for Fujicoin's 160-bit hash (SHA-256 + RIPEMD-160). */
+/** A hasher class for Baricoin's 160-bit hash (SHA-256 + RIPEMD-160). */
 class CHash160 {
 private:
     CSHA256 sha;
@@ -223,4 +223,4 @@ void BIP32Hash(const ChainCode &chainCode, unsigned int nChild, unsigned char he
  */
 HashWriter TaggedHash(const std::string& tag);
 
-#endif // FUJICOIN_HASH_H
+#endif // BARICOIN_HASH_H

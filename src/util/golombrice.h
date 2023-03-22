@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_GOLOMBRICE_H
-#define FUJICOIN_UTIL_GOLOMBRICE_H
+#ifndef BARICOIN_UTIL_GOLOMBRICE_H
+#define BARICOIN_UTIL_GOLOMBRICE_H
 
 #include <util/fastrange.h>
 
@@ -42,4 +42,4 @@ uint64_t GolombRiceDecode(BitStreamReader<IStream>& bitreader, uint8_t P)
     return (q << P) + r;
 }
 
-#endif // FUJICOIN_UTIL_GOLOMBRICE_H
+#endif // BARICOIN_UTIL_GOLOMBRICE_H

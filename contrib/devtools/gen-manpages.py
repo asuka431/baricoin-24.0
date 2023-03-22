@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2022 The Fujicoin Core developers
+# Copyright (c) 2022 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 import os
@@ -8,12 +8,12 @@ import sys
 import tempfile
 
 BINARIES = [
-'src/fujicoind',
-'src/fujicoin-cli',
-'src/fujicoin-tx',
-'src/fujicoin-wallet',
-'src/fujicoin-util',
-'src/qt/fujicoin-qt',
+'src/baricoind',
+'src/baricoin-cli',
+'src/baricoin-tx',
+'src/baricoin-wallet',
+'src/baricoin-util',
+'src/qt/baricoin-qt',
 ]
 
 # Paths to external utilities.

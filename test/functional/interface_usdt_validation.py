@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2022 The Fujicoin Core developers
+# Copyright (c) 2022 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,7 +16,7 @@ except ImportError:
     pass
 
 from test_framework.address import ADDRESS_BCRT1_UNSPENDABLE
-from test_framework.test_framework import FujicoinTestFramework
+from test_framework.test_framework import BaricoinTestFramework
 from test_framework.util import assert_equal
 
 
@@ -50,13 +50,13 @@ int trace_block_connected(struct pt_regs *ctx) {
 """
 
 
-class ValidationTracepointTest(FujicoinTestFramework):
+class ValidationTracepointTest(BaricoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 
     def skip_test_if_missing_module(self):
         self.skip_if_platform_not_linux()
-        self.skip_if_no_fujicoind_tracepoints()
+        self.skip_if_no_baricoind_tracepoints()
         self.skip_if_no_python_bcc()
         self.skip_if_no_bpf_permissions()
 

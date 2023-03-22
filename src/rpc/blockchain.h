@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_RPC_BLOCKCHAIN_H
-#define FUJICOIN_RPC_BLOCKCHAIN_H
+#ifndef BARICOIN_RPC_BLOCKCHAIN_H
+#define BARICOIN_RPC_BLOCKCHAIN_H
 
 #include <consensus/amount.h>
 #include <core_io.h>
@@ -59,4 +59,4 @@ UniValue CreateUTXOSnapshot(
     const fs::path& path,
     const fs::path& tmppath);
 
-#endif // FUJICOIN_RPC_BLOCKCHAIN_H
+#endif // BARICOIN_RPC_BLOCKCHAIN_H

@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_PUBKEY_H
-#define FUJICOIN_PUBKEY_H
+#ifndef BARICOIN_PUBKEY_H
+#define BARICOIN_PUBKEY_H
 
 #include <hash.h>
 #include <serialize.h>
@@ -347,4 +347,4 @@ typedef struct secp256k1_context_struct secp256k1_context;
  *  by key.cpp. */
 const secp256k1_context* GetVerifyContext();
 
-#endif // FUJICOIN_PUBKEY_H
+#endif // BARICOIN_PUBKEY_H

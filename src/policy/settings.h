@@ -3,9 +3,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_POLICY_SETTINGS_H
-#define FUJICOIN_POLICY_SETTINGS_H
+#ifndef BARICOIN_POLICY_SETTINGS_H
+#define BARICOIN_POLICY_SETTINGS_H
 
 extern unsigned int nBytesPerSigOp;
 
-#endif // FUJICOIN_POLICY_SETTINGS_H
+#endif // BARICOIN_POLICY_SETTINGS_H

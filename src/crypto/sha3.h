@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_CRYPTO_SHA3_H
-#define FUJICOIN_CRYPTO_SHA3_H
+#ifndef BARICOIN_CRYPTO_SHA3_H
+#define BARICOIN_CRYPTO_SHA3_H
 
 #include <span.h>
 
@@ -38,4 +38,4 @@ public:
     SHA3_256& Reset();
 };
 
-#endif // FUJICOIN_CRYPTO_SHA3_H
+#endif // BARICOIN_CRYPTO_SHA3_H

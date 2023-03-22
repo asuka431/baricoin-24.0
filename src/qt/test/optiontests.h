@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_QT_TEST_OPTIONTESTS_H
-#define FUJICOIN_QT_TEST_OPTIONTESTS_H
+#ifndef BARICOIN_QT_TEST_OPTIONTESTS_H
+#define BARICOIN_QT_TEST_OPTIONTESTS_H
 
 #include <qt/optionsmodel.h>
 #include <univalue.h>
@@ -29,4 +29,4 @@ private:
     util::Settings m_previous_settings;
 };
 
-#endif // FUJICOIN_QT_TEST_OPTIONTESTS_H
+#endif // BARICOIN_QT_TEST_OPTIONTESTS_H

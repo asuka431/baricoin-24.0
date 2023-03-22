@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_RPC_MINING_H
-#define FUJICOIN_RPC_MINING_H
+#ifndef BARICOIN_RPC_MINING_H
+#define BARICOIN_RPC_MINING_H
 
 /** Default max iterations to try in RPC generatetodescriptor, generatetoaddress, and generateblock. */
 static const uint64_t DEFAULT_MAX_TRIES{1000000};
 
-#endif // FUJICOIN_RPC_MINING_H
+#endif // BARICOIN_RPC_MINING_H

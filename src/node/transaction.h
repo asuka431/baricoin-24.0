@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NODE_TRANSACTION_H
-#define FUJICOIN_NODE_TRANSACTION_H
+#ifndef BARICOIN_NODE_TRANSACTION_H
+#define BARICOIN_NODE_TRANSACTION_H
 
 #include <policy/feerate.h>
 #include <primitives/transaction.h>
@@ -60,4 +60,4 @@ static const CFeeRate DEFAULT_MAX_RAW_TX_FEE_RATE{10 * COIN};
 CTransactionRef GetTransaction(const CBlockIndex* const block_index, const CTxMemPool* const mempool, const uint256& hash, const Consensus::Params& consensusParams, uint256& hashBlock);
 } // namespace node
 
-#endif // FUJICOIN_NODE_TRANSACTION_H
+#endif // BARICOIN_NODE_TRANSACTION_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NODE_CHAINSTATE_H
-#define FUJICOIN_NODE_CHAINSTATE_H
+#ifndef BARICOIN_NODE_CHAINSTATE_H
+#define BARICOIN_NODE_CHAINSTATE_H
 
 #include <util/translation.h>
 #include <validation.h>
@@ -58,4 +58,4 @@ ChainstateLoadResult LoadChainstate(ChainstateManager& chainman, const CacheSize
 ChainstateLoadResult VerifyLoadedChainstate(ChainstateManager& chainman, const ChainstateLoadOptions& options);
 } // namespace node
 
-#endif // FUJICOIN_NODE_CHAINSTATE_H
+#endif // BARICOIN_NODE_CHAINSTATE_H

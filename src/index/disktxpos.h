@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_INDEX_DISKTXPOS_H
-#define FUJICOIN_INDEX_DISKTXPOS_H
+#ifndef BARICOIN_INDEX_DISKTXPOS_H
+#define BARICOIN_INDEX_DISKTXPOS_H
 
 #include <flatfile.h>
 #include <serialize.h>
@@ -32,4 +32,4 @@ struct CDiskTxPos : public FlatFilePos
 };
 
 
-#endif // FUJICOIN_INDEX_DISKTXPOS_H
+#endif // BARICOIN_INDEX_DISKTXPOS_H

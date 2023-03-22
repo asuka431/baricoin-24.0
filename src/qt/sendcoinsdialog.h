@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_QT_SENDCOINSDIALOG_H
-#define FUJICOIN_QT_SENDCOINSDIALOG_H
+#ifndef BARICOIN_QT_SENDCOINSDIALOG_H
+#define BARICOIN_QT_SENDCOINSDIALOG_H
 
 #include <qt/clientmodel.h>
 #include <qt/walletmodel.h>
@@ -29,7 +29,7 @@ QT_BEGIN_NAMESPACE
 class QUrl;
 QT_END_NAMESPACE
 
-/** Dialog for sending fujicoins */
+/** Dialog for sending baricoins */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT
@@ -146,4 +146,4 @@ private:
     QString m_psbt_button_text{tr("Create Unsigned")};
 };
 
-#endif // FUJICOIN_QT_SENDCOINSDIALOG_H
+#endif // BARICOIN_QT_SENDCOINSDIALOG_H

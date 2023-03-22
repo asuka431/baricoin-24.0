@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_TEST_INIT_TEST_FIXTURE_H
-#define FUJICOIN_WALLET_TEST_INIT_TEST_FIXTURE_H
+#ifndef BARICOIN_WALLET_TEST_INIT_TEST_FIXTURE_H
+#define BARICOIN_WALLET_TEST_INIT_TEST_FIXTURE_H
 
 #include <interfaces/chain.h>
 #include <interfaces/wallet.h>
@@ -23,5 +23,5 @@ struct InitWalletDirTestingSetup: public BasicTestingSetup {
     std::unique_ptr<interfaces::WalletLoader> m_wallet_loader;
 };
 
-#endif // FUJICOIN_WALLET_TEST_INIT_TEST_FIXTURE_H
+#endif // BARICOIN_WALLET_TEST_INIT_TEST_FIXTURE_H
 } // namespace wallet

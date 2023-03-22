@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NETGROUP_H
-#define FUJICOIN_NETGROUP_H
+#ifndef BARICOIN_NETGROUP_H
+#define BARICOIN_NETGROUP_H
 
 #include <netaddress.h>
 #include <uint256.h>
@@ -63,4 +63,4 @@ private:
     const std::vector<bool> m_asmap;
 };
 
-#endif // FUJICOIN_NETGROUP_H
+#endif // BARICOIN_NETGROUP_H

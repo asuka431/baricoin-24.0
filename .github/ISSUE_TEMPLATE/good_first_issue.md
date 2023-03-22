@@ -15,7 +15,7 @@ assignees: ''
 
 #### Useful skills:
 
-<!-- (For example, “C++11 std::thread”, “Qt5 GUI and async GUI design” or “basic understanding of Fujicoin mining and the Fujicoin Core RPC interface”.) -->
+<!-- (For example, “C++11 std::thread”, “Qt5 GUI and async GUI design” or “basic understanding of Baricoin mining and the Baricoin Core RPC interface”.) -->
 
 #### Want to work on this issue?
 

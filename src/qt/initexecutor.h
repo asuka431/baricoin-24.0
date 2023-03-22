@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_QT_INITEXECUTOR_H
-#define FUJICOIN_QT_INITEXECUTOR_H
+#ifndef BARICOIN_QT_INITEXECUTOR_H
+#define BARICOIN_QT_INITEXECUTOR_H
 
 #include <interfaces/node.h>
 
@@ -16,7 +16,7 @@ QT_BEGIN_NAMESPACE
 class QString;
 QT_END_NAMESPACE
 
-/** Class encapsulating Fujicoin Core startup and shutdown.
+/** Class encapsulating Baricoin Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
 class InitExecutor : public QObject
@@ -44,4 +44,4 @@ private:
     QThread m_thread;
 };
 
-#endif // FUJICOIN_QT_INITEXECUTOR_H
+#endif // BARICOIN_QT_INITEXECUTOR_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_TEST_UTIL_LOGGING_H
-#define FUJICOIN_TEST_UTIL_LOGGING_H
+#ifndef BARICOIN_TEST_UTIL_LOGGING_H
+#define BARICOIN_TEST_UTIL_LOGGING_H
 
 #include <util/macros.h>
 
@@ -38,4 +38,4 @@ public:
 
 #define ASSERT_DEBUG_LOG(message) DebugLogHelper UNIQUE_NAME(debugloghelper)(message)
 
-#endif // FUJICOIN_TEST_UTIL_LOGGING_H
+#endif // BARICOIN_TEST_UTIL_LOGGING_H

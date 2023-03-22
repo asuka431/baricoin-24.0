@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_I2P_H
-#define FUJICOIN_I2P_H
+#ifndef BARICOIN_I2P_H
+#define BARICOIN_I2P_H
 
 #include <compat/compat.h>
 #include <fs.h>
@@ -286,4 +286,4 @@ private:
 } // namespace sam
 } // namespace i2p
 
-#endif // FUJICOIN_I2P_H
+#endif // BARICOIN_I2P_H

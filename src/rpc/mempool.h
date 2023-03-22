@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_RPC_MEMPOOL_H
-#define FUJICOIN_RPC_MEMPOOL_H
+#ifndef BARICOIN_RPC_MEMPOOL_H
+#define BARICOIN_RPC_MEMPOOL_H
 
 class CTxMemPool;
 class UniValue;
@@ -14,4 +14,4 @@ UniValue MempoolInfoToJSON(const CTxMemPool& pool);
 /** Mempool to JSON */
 UniValue MempoolToJSON(const CTxMemPool& pool, bool verbose = false, bool include_mempool_sequence = false);
 
-#endif // FUJICOIN_RPC_MEMPOOL_H
+#endif // BARICOIN_RPC_MEMPOOL_H

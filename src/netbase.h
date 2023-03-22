@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NETBASE_H
-#define FUJICOIN_NETBASE_H
+#ifndef BARICOIN_NETBASE_H
+#define BARICOIN_NETBASE_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <compat/compat.h>
@@ -254,4 +254,4 @@ bool Socks5(const std::string& strDest, uint16_t port, const ProxyCredentials* a
  */
 bool IsBadPort(uint16_t port);
 
-#endif // FUJICOIN_NETBASE_H
+#endif // BARICOIN_NETBASE_H

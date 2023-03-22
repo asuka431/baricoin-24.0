@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_REST_H
-#define FUJICOIN_REST_H
+#ifndef BARICOIN_REST_H
+#define BARICOIN_REST_H
 
 #include <string>
 
@@ -25,4 +25,4 @@ enum class RESTResponseFormat {
  */
 RESTResponseFormat ParseDataFormat(std::string& param, const std::string& strReq);
 
-#endif // FUJICOIN_REST_H
+#endif // BARICOIN_REST_H

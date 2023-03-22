@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_CONSENSUS_PARAMS_H
-#define FUJICOIN_CONSENSUS_PARAMS_H
+#ifndef BARICOIN_CONSENSUS_PARAMS_H
+#define BARICOIN_CONSENSUS_PARAMS_H
 
 #include <uint256.h>
 
@@ -121,7 +121,7 @@ struct Params {
     uint256 defaultAssumeValid;
 
     /**
-     * If true, witness commitments contain a payload equal to a Fujicoin Script solution
+     * If true, witness commitments contain a payload equal to a Baricoin Script solution
      * to the signet challenge. See BIP325.
      */
     bool signet_blocks{false};
@@ -147,4 +147,4 @@ struct Params {
 
 } // namespace Consensus
 
-#endif // FUJICOIN_CONSENSUS_PARAMS_H
+#endif // BARICOIN_CONSENSUS_PARAMS_H

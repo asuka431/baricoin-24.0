@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (c) 2021 The Fujicoin Core developers
+# Copyright (c) 2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 export LC_ALL=C
@@ -82,7 +82,7 @@ mkdir -p "$DISTSRC"
             ;;
         *darwin*)
             # Apply detached codesignatures to dist/ (in-place)
-            signapple apply dist/Fujicoin-Qt.app codesignatures/osx/dist
+            signapple apply dist/Baricoin-Qt.app codesignatures/osx/dist
 
             # Make a DMG from dist/
             xorrisofs -D -l -V "$(< osx_volname)" -no-pad -r -dir-mode 0755 \

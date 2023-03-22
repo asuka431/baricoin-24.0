@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_RANDOMENV_H
-#define FUJICOIN_RANDOMENV_H
+#ifndef BARICOIN_RANDOMENV_H
+#define BARICOIN_RANDOMENV_H
 
 #include <crypto/sha512.h>
 
@@ -14,4 +14,4 @@ void RandAddDynamicEnv(CSHA512& hasher);
 /** Gather non-cryptographic environment data that does not change over time. */
 void RandAddStaticEnv(CSHA512& hasher);
 
-#endif // FUJICOIN_RANDOMENV_H
+#endif // BARICOIN_RANDOMENV_H

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_ADDRMAN_H
-#define FUJICOIN_ADDRMAN_H
+#ifndef BARICOIN_ADDRMAN_H
+#define BARICOIN_ADDRMAN_H
 
 #include <netaddress.h>
 #include <netgroup.h>
@@ -183,4 +183,4 @@ public:
     std::optional<AddressPosition> FindAddressEntry(const CAddress& addr);
 };
 
-#endif // FUJICOIN_ADDRMAN_H
+#endif // BARICOIN_ADDRMAN_H

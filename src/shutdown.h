@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_SHUTDOWN_H
-#define FUJICOIN_SHUTDOWN_H
+#ifndef BARICOIN_SHUTDOWN_H
+#define BARICOIN_SHUTDOWN_H
 
 #include <util/translation.h> // For bilingual_str
 
@@ -32,4 +32,4 @@ bool ShutdownRequested();
  */
 void WaitForShutdown();
 
-#endif // FUJICOIN_SHUTDOWN_H
+#endif // BARICOIN_SHUTDOWN_H

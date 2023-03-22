@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_WALLET_H
-#define FUJICOIN_WALLET_WALLET_H
+#ifndef BARICOIN_WALLET_WALLET_H
+#define BARICOIN_WALLET_WALLET_H
 
 #include <consensus/amount.h>
 #include <fs.h>
@@ -1009,4 +1009,4 @@ struct MigrationResult {
 util::Result<MigrationResult> MigrateLegacyToDescriptor(std::shared_ptr<CWallet>&& wallet, WalletContext& context);
 } // namespace wallet
 
-#endif // FUJICOIN_WALLET_WALLET_H
+#endif // BARICOIN_WALLET_WALLET_H

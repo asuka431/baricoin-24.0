@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_CHAINPARAMS_H
-#define FUJICOIN_CHAINPARAMS_H
+#ifndef BARICOIN_CHAINPARAMS_H
+#define BARICOIN_CHAINPARAMS_H
 
 #include <chainparamsbase.h>
 #include <consensus/params.h>
@@ -64,7 +64,7 @@ struct ChainTxData {
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
- * Fujicoin system.
+ * Baricoin system.
  */
 class CChainParams
 {
@@ -165,4 +165,4 @@ const CChainParams &Params();
  */
 void SelectParams(const std::string& chain);
 
-#endif // FUJICOIN_CHAINPARAMS_H
+#endif // BARICOIN_CHAINPARAMS_H

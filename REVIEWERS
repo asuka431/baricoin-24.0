@@ -1,8 +1,8 @@
 # ==============================================================================
-#                          Fujicoin Core REVIEWERS
+#                          Baricoin Core REVIEWERS
 # ==============================================================================
 
-# Configuration of automated review requests for the fujicoin/fujicoin repo
+# Configuration of automated review requests for the baricoin/baricoin repo
 # via DrahtBot.
 
 # Order is not important; if a modified file or directory matches a fnmatch,

@@ -2286,7 +2286,7 @@ bool DescriptorScriptPubKeyMan::SetupDescriptorGeneration(const CExtKey& master_
     } // no default case, so the compiler can warn about missing cases
     assert(!desc_prefix.empty());
 
-    // Fujicoin Mainnet derives at 75', testnet and regtest derive at 1'
+    // Baricoin Mainnet derives at 75', testnet and regtest derive at 1'
     if (Params().IsTestChain()) {
         desc_prefix += "/1'";
     } else {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017-2021 The Fujicoin Core developers
+# Copyright (c) 2017-2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test various command line arguments and configuration file parameters."""
@@ -8,12 +8,12 @@ import json
 
 from pathlib import Path
 
-from test_framework.test_framework import FujicoinTestFramework
+from test_framework.test_framework import BaricoinTestFramework
 from test_framework.test_node import ErrorMatch
 from test_framework.util import assert_equal
 
 
-class SettingsTest(FujicoinTestFramework):
+class SettingsTest(BaricoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -22,7 +22,7 @@ class SettingsTest(FujicoinTestFramework):
     def run_test(self):
         node, = self.nodes
         settings = Path(node.datadir, self.chain, "settings.json")
-        conf = Path(node.datadir, "fujicoin.conf")
+        conf = Path(node.datadir, "baricoin.conf")
 
         # Assert empty settings file was created
         self.stop_node(0)

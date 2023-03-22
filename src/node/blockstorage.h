@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NODE_BLOCKSTORAGE_H
-#define FUJICOIN_NODE_BLOCKSTORAGE_H
+#ifndef BARICOIN_NODE_BLOCKSTORAGE_H
+#define BARICOIN_NODE_BLOCKSTORAGE_H
 
 #include <attributes.h>
 #include <chain.h>
@@ -214,4 +214,4 @@ bool UndoReadFromDisk(CBlockUndo& blockundo, const CBlockIndex* pindex);
 void ThreadImport(ChainstateManager& chainman, std::vector<fs::path> vImportFiles, const ArgsManager& args, const fs::path& mempool_path);
 } // namespace node
 
-#endif // FUJICOIN_NODE_BLOCKSTORAGE_H
+#endif // BARICOIN_NODE_BLOCKSTORAGE_H

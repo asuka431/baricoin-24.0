@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NODE_PSBT_H
-#define FUJICOIN_NODE_PSBT_H
+#ifndef BARICOIN_NODE_PSBT_H
+#define BARICOIN_NODE_PSBT_H
 
 #include <psbt.h>
 
@@ -55,4 +55,4 @@ struct PSBTAnalysis {
 PSBTAnalysis AnalyzePSBT(PartiallySignedTransaction psbtx);
 } // namespace node
 
-#endif // FUJICOIN_NODE_PSBT_H
+#endif // BARICOIN_NODE_PSBT_H

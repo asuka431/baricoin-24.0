@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2018-2022 The Fujicoin Core developers
+# Copyright (c) 2018-2022 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +14,7 @@ from subprocess import check_output
 from typing import List
 
 
-HEADER_ID_PREFIX = 'FUJICOIN_'
+HEADER_ID_PREFIX = 'BARICOIN_'
 HEADER_ID_SUFFIX = '_H'
 
 EXCLUDE_FILES_WITH_PREFIX = ['src/crypto/ctaes',
@@ -46,7 +46,7 @@ def _get_header_id(header_file: str) -> str:
     """ Helper function to get the header id from a header file
         string.
 
-        eg: 'src/wallet/walletdb.h' -> 'FUJICOIN_WALLET_WALLETDB_H'
+        eg: 'src/wallet/walletdb.h' -> 'BARICOIN_WALLET_WALLETDB_H'
 
     Args:
         header_file: Filepath to header file.

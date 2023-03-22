@@ -5,8 +5,8 @@
 /**
  * Functionality for communicating with Tor.
  */
-#ifndef FUJICOIN_TORCONTROL_H
-#define FUJICOIN_TORCONTROL_H
+#ifndef BARICOIN_TORCONTROL_H
+#define BARICOIN_TORCONTROL_H
 
 #include <fs.h>
 #include <netaddress.h>
@@ -104,7 +104,7 @@ private:
     static void eventcb(struct bufferevent *bev, short what, void *ctx);
 };
 
-/****** Fujicoin specific TorController implementation ********/
+/****** Baricoin specific TorController implementation ********/
 
 /** Controller that connects to Tor control socket, authenticate, then create
  * and maintain an ephemeral onion service.
@@ -159,4 +159,4 @@ public:
     static void reconnect_cb(evutil_socket_t fd, short what, void *arg);
 };
 
-#endif // FUJICOIN_TORCONTROL_H
+#endif // BARICOIN_TORCONTROL_H

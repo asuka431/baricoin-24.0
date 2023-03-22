@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_QT_UTILITYDIALOG_H
-#define FUJICOIN_QT_UTILITYDIALOG_H
+#ifndef BARICOIN_QT_UTILITYDIALOG_H
+#define BARICOIN_QT_UTILITYDIALOG_H
 
 #include <QDialog>
 #include <QWidget>
@@ -50,4 +50,4 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 };
 
-#endif // FUJICOIN_QT_UTILITYDIALOG_H
+#endif // BARICOIN_QT_UTILITYDIALOG_H

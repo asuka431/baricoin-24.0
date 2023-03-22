@@ -3,10 +3,10 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 //! @file
-//! @brief Common init functions shared by fujicoin-node, fujicoin-wallet, etc.
+//! @brief Common init functions shared by baricoin-node, baricoin-wallet, etc.
 
-#ifndef FUJICOIN_INIT_COMMON_H
-#define FUJICOIN_INIT_COMMON_H
+#ifndef BARICOIN_INIT_COMMON_H
+#define BARICOIN_INIT_COMMON_H
 
 class ArgsManager;
 
@@ -19,4 +19,4 @@ bool StartLogging(const ArgsManager& args);
 void LogPackageVersion();
 } // namespace init
 
-#endif // FUJICOIN_INIT_COMMON_H
+#endif // BARICOIN_INIT_COMMON_H

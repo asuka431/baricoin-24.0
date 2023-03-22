@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_TEST_UTIL_H
-#define FUJICOIN_WALLET_TEST_UTIL_H
+#ifndef BARICOIN_WALLET_TEST_UTIL_H
+#define BARICOIN_WALLET_TEST_UTIL_H
 
 #include <memory>
 
@@ -20,4 +20,4 @@ class CWallet;
 std::unique_ptr<CWallet> CreateSyncedWallet(interfaces::Chain& chain, CChain& cchain, ArgsManager& args, const CKey& key);
 } // namespace wallet
 
-#endif // FUJICOIN_WALLET_TEST_UTIL_H
+#endif // BARICOIN_WALLET_TEST_UTIL_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_INTERFACES_NODE_H
-#define FUJICOIN_INTERFACES_NODE_H
+#ifndef BARICOIN_INTERFACES_NODE_H
+#define BARICOIN_INTERFACES_NODE_H
 
 #include <consensus/amount.h>          // For CAmount
 #include <net.h>                       // For NodeId
@@ -65,7 +65,7 @@ public:
     virtual std::string getName() = 0;
 };
 
-//! Top-level interface for a fujicoin node (fujicoind process).
+//! Top-level interface for a baricoin node (baricoind process).
 class Node
 {
 public:
@@ -102,7 +102,7 @@ public:
     //! would be ignored because it is also specified in the command line.
     virtual bool isSettingIgnored(const std::string& name) = 0;
 
-    //! Return setting value from <datadir>/settings.json or fujicoin.conf.
+    //! Return setting value from <datadir>/settings.json or baricoin.conf.
     virtual util::SettingsValue getPersistentSetting(const std::string& name) = 0;
 
     //! Update a setting in <datadir>/settings.json.
@@ -281,4 +281,4 @@ struct BlockTip {
 
 } // namespace interfaces
 
-#endif // FUJICOIN_INTERFACES_NODE_H
+#endif // BARICOIN_INTERFACES_NODE_H

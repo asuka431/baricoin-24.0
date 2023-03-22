@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_QT_TRANSACTIONDESC_H
-#define FUJICOIN_QT_TRANSACTIONDESC_H
+#ifndef BARICOIN_QT_TRANSACTIONDESC_H
+#define BARICOIN_QT_TRANSACTIONDESC_H
 
-#include <qt/fujicoinunits.h>
+#include <qt/baricoinunits.h>
 
 #include <QObject>
 #include <QString>
@@ -26,7 +26,7 @@ class TransactionDesc: public QObject
     Q_OBJECT
 
 public:
-    static QString toHTML(interfaces::Node& node, interfaces::Wallet& wallet, TransactionRecord* rec, FujicoinUnit unit);
+    static QString toHTML(interfaces::Node& node, interfaces::Wallet& wallet, TransactionRecord* rec, BaricoinUnit unit);
 
 private:
     TransactionDesc() {}
@@ -34,4 +34,4 @@ private:
     static QString FormatTxStatus(const interfaces::WalletTxStatus& status, bool inMempool);
 };
 
-#endif // FUJICOIN_QT_TRANSACTIONDESC_H
+#endif // BARICOIN_QT_TRANSACTIONDESC_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_INTERFACES_CHAIN_H
-#define FUJICOIN_INTERFACES_CHAIN_H
+#ifndef BARICOIN_INTERFACES_CHAIN_H
+#define BARICOIN_INTERFACES_CHAIN_H
 
 #include <primitives/transaction.h> // For CTransactionRef
 #include <util/settings.h>          // For util::SettingsValue
@@ -95,7 +95,7 @@ struct BlockInfo {
 //! estimate fees, and submit transactions.
 //!
 //! TODO: Current chain methods are too low level, exposing too much of the
-//! internal workings of the fujicoin node, and not being very convenient to use.
+//! internal workings of the baricoin node, and not being very convenient to use.
 //! Chain methods should be cleaned up and simplified over time. Examples:
 //!
 //! * The initMessages() and showProgress() methods which the wallet uses to send
@@ -353,4 +353,4 @@ std::unique_ptr<Chain> MakeChain(node::NodeContext& node);
 
 } // namespace interfaces
 
-#endif // FUJICOIN_INTERFACES_CHAIN_H
+#endif // BARICOIN_INTERFACES_CHAIN_H

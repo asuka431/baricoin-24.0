@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_VERSION_H
-#define FUJICOIN_VERSION_H
+#ifndef BARICOIN_VERSION_H
+#define BARICOIN_VERSION_H
 
 /**
  * network protocol versioning
@@ -41,4 +41,4 @@ static const int WTXID_RELAY_VERSION = 70016;
 // Make sure that none of the values above collide with
 // `SERIALIZE_TRANSACTION_NO_WITNESS` or `ADDRV2_FORMAT`.
 
-#endif // FUJICOIN_VERSION_H
+#endif // BARICOIN_VERSION_H

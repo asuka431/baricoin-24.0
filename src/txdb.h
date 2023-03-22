@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_TXDB_H
-#define FUJICOIN_TXDB_H
+#ifndef BARICOIN_TXDB_H
+#define BARICOIN_TXDB_H
 
 #include <coins.h>
 #include <dbwrapper.h>
@@ -93,4 +93,4 @@ public:
 
 std::optional<bilingual_str> CheckLegacyTxindex(CBlockTreeDB& block_tree_db);
 
-#endif // FUJICOIN_TXDB_H
+#endif // BARICOIN_TXDB_H

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_THREADSAFETY_H
-#define FUJICOIN_THREADSAFETY_H
+#ifndef BARICOIN_THREADSAFETY_H
+#define BARICOIN_THREADSAFETY_H
 
 #include <mutex>
 
@@ -74,4 +74,4 @@ public:
     ~StdLockGuard() UNLOCK_FUNCTION() {}
 };
 
-#endif // FUJICOIN_THREADSAFETY_H
+#endif // BARICOIN_THREADSAFETY_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_INTERFACES_WALLET_H
-#define FUJICOIN_INTERFACES_WALLET_H
+#ifndef BARICOIN_INTERFACES_WALLET_H
+#define BARICOIN_INTERFACES_WALLET_H
 
 #include <consensus/amount.h>
 #include <fs.h>
@@ -432,4 +432,4 @@ std::unique_ptr<WalletLoader> MakeWalletLoader(Chain& chain, ArgsManager& args);
 
 } // namespace interfaces
 
-#endif // FUJICOIN_INTERFACES_WALLET_H
+#endif // BARICOIN_INTERFACES_WALLET_H

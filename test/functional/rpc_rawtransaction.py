@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2021 The Fujicoin Core developers
+# Copyright (c) 2014-2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the rawtransaction RPCs.
@@ -21,7 +21,7 @@ from test_framework.messages import (
     CTransaction,
     tx_from_hex,
 )
-from test_framework.test_framework import FujicoinTestFramework
+from test_framework.test_framework import BaricoinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -53,7 +53,7 @@ class multidict(dict):
         return self.x
 
 
-class RawTransactionsTest(FujicoinTestFramework):
+class RawTransactionsTest(BaricoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3
@@ -211,7 +211,7 @@ class RawTransactionsTest(FujicoinTestFramework):
         self.nodes[0].createrawtransaction(inputs=[], outputs={})  # Should not throw for backwards compatibility
         self.nodes[0].createrawtransaction(inputs=[], outputs=[])
         assert_raises_rpc_error(-8, "Data must be hexadecimal string", self.nodes[0].createrawtransaction, [], {'data': 'foo'})
-        assert_raises_rpc_error(-5, "Invalid Fujicoin address", self.nodes[0].createrawtransaction, [], {'foo': 0})
+        assert_raises_rpc_error(-5, "Invalid Baricoin address", self.nodes[0].createrawtransaction, [], {'foo': 0})
         assert_raises_rpc_error(-3, "Invalid amount", self.nodes[0].createrawtransaction, [], {address: 'foo'})
         assert_raises_rpc_error(-3, "Amount out of range", self.nodes[0].createrawtransaction, [], {address: -1})
         assert_raises_rpc_error(-8, "Invalid parameter, duplicated address: %s" % address, self.nodes[0].createrawtransaction, [], multidict([(address, 1), (address, 1)]))
@@ -270,7 +270,7 @@ class RawTransactionsTest(FujicoinTestFramework):
         fee_exceeds_max = "Fee exceeds maximum configured by user (e.g. -maxtxfee, maxfeerate)"
 
         # Test a transaction with a small fee.
-        # Fee rate is 0.00100000 FJC/kvB
+        # Fee rate is 0.00100000 BARI/kvB
         tx = self.wallet.create_self_transfer(fee_rate=Decimal('0.00100000'))
         # Thus, testmempoolaccept should reject
         testres = self.nodes[2].testmempoolaccept([tx['hex']], 0.00001000)[0]
@@ -284,7 +284,7 @@ class RawTransactionsTest(FujicoinTestFramework):
         self.nodes[2].sendrawtransaction(hexstring=tx['hex'])
 
         # Test a transaction with a large fee.
-        # Fee rate is 0.20000000 FJC/kvB
+        # Fee rate is 0.20000000 BARI/kvB
         tx = self.wallet.create_self_transfer(fee_rate=Decimal("0.20000000"))
         # Thus, testmempoolaccept should reject
         testres = self.nodes[2].testmempoolaccept([tx['hex']])[0]
@@ -368,7 +368,7 @@ class RawTransactionsTest(FujicoinTestFramework):
         # use balance deltas instead of absolute values
         bal = self.nodes[2].getbalance()
 
-        # send 1.2 FJC to msig adr
+        # send 1.2 BARI to msig adr
         txId = self.nodes[0].sendtoaddress(mSigObj, 1.2)
         self.sync_all()
         self.generate(self.nodes[0], 1)

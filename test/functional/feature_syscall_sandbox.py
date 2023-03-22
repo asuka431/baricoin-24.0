@@ -1,32 +1,32 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The Fujicoin Core developers
+# Copyright (c) 2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test fujicoind aborts if a disallowed syscall is used when compiled with the syscall sandbox."""
+"""Test baricoind aborts if a disallowed syscall is used when compiled with the syscall sandbox."""
 
-from test_framework.test_framework import FujicoinTestFramework, SkipTest
+from test_framework.test_framework import BaricoinTestFramework, SkipTest
 
 
-class SyscallSandboxTest(FujicoinTestFramework):
+class SyscallSandboxTest(BaricoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 
     def skip_test_if_missing_module(self):
         if not self.is_syscall_sandbox_compiled():
-            raise SkipTest("fujicoind has not been built with syscall sandbox enabled.")
+            raise SkipTest("baricoind has not been built with syscall sandbox enabled.")
         if self.disable_syscall_sandbox:
             raise SkipTest("--nosandbox passed to test runner.")
 
     def run_test(self):
-        disallowed_syscall_terminated_fujicoind = False
+        disallowed_syscall_terminated_baricoind = False
         expected_log_entry = 'ERROR: The syscall "getgroups" (syscall number 115) is not allowed by the syscall sandbox'
         with self.nodes[0].assert_debug_log([expected_log_entry]):
             self.log.info("Invoking disallowed syscall")
             try:
                 self.nodes[0].invokedisallowedsyscall()
             except ConnectionError:
-                disallowed_syscall_terminated_fujicoind = True
-        assert disallowed_syscall_terminated_fujicoind
+                disallowed_syscall_terminated_baricoind = True
+        assert disallowed_syscall_terminated_baricoind
         self.nodes = []
 
 

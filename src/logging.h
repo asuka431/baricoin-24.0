@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_LOGGING_H
-#define FUJICOIN_LOGGING_H
+#ifndef BARICOIN_LOGGING_H
+#define BARICOIN_LOGGING_H
 
 #include <fs.h>
 #include <threadsafety.h>
@@ -255,4 +255,4 @@ static inline void LogPrintf_(const std::string& logging_function, const std::st
         }                                                 \
     } while (0)
 
-#endif // FUJICOIN_LOGGING_H
+#endif // BARICOIN_LOGGING_H

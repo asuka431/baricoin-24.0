@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_TXORPHANAGE_H
-#define FUJICOIN_TXORPHANAGE_H
+#ifndef BARICOIN_TXORPHANAGE_H
+#define BARICOIN_TXORPHANAGE_H
 
 #include <net.h>
 #include <primitives/block.h>
@@ -89,4 +89,4 @@ protected:
     std::map<uint256, OrphanMap::iterator> m_wtxid_to_orphan_it GUARDED_BY(g_cs_orphans);
 };
 
-#endif // FUJICOIN_TXORPHANAGE_H
+#endif // BARICOIN_TXORPHANAGE_H

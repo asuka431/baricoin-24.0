@@ -2,30 +2,30 @@
 
 | Name                     | Description |
 |--------------------------|-------------|
-| *libfujicoin_cli*         | RPC client functionality used by *fujicoin-cli* executable |
-| *libfujicoin_common*      | Home for common functionality shared by different executables and libraries. Similar to *libfujicoin_util*, but higher-level (see [Dependencies](#dependencies)). |
-| *libfujicoin_consensus*   | Stable, backwards-compatible consensus functionality used by *libfujicoin_node* and *libfujicoin_wallet* and also exposed as a [shared library](../shared-libraries.md). |
-| *libfujicoinconsensus*    | Shared library build of static *libfujicoin_consensus* library |
-| *libfujicoin_kernel*      | Consensus engine and support library used for validation by *libfujicoin_node* and also exposed as a [shared library](../shared-libraries.md). |
-| *libfujicoinqt*           | GUI functionality used by *fujicoin-qt* and *fujicoin-gui* executables |
-| *libfujicoin_ipc*         | IPC functionality used by *fujicoin-node*, *fujicoin-wallet*, *fujicoin-gui* executables to communicate when [`--enable-multiprocess`](multiprocess.md) is used. |
-| *libfujicoin_node*        | P2P and RPC server functionality used by *fujicoind* and *fujicoin-qt* executables. |
-| *libfujicoin_util*        | Home for common functionality shared by different executables and libraries. Similar to *libfujicoin_common*, but lower-level (see [Dependencies](#dependencies)). |
-| *libfujicoin_wallet*      | Wallet functionality used by *fujicoind* and *fujicoin-wallet* executables. |
-| *libfujicoin_wallet_tool* | Lower-level wallet functionality used by *fujicoin-wallet* executable. |
-| *libfujicoin_zmq*         | [ZeroMQ](../zmq.md) functionality used by *fujicoind* and *fujicoin-qt* executables. |
+| *libbaricoin_cli*         | RPC client functionality used by *baricoin-cli* executable |
+| *libbaricoin_common*      | Home for common functionality shared by different executables and libraries. Similar to *libbaricoin_util*, but higher-level (see [Dependencies](#dependencies)). |
+| *libbaricoin_consensus*   | Stable, backwards-compatible consensus functionality used by *libbaricoin_node* and *libbaricoin_wallet* and also exposed as a [shared library](../shared-libraries.md). |
+| *libbaricoinconsensus*    | Shared library build of static *libbaricoin_consensus* library |
+| *libbaricoin_kernel*      | Consensus engine and support library used for validation by *libbaricoin_node* and also exposed as a [shared library](../shared-libraries.md). |
+| *libbaricoinqt*           | GUI functionality used by *baricoin-qt* and *baricoin-gui* executables |
+| *libbaricoin_ipc*         | IPC functionality used by *baricoin-node*, *baricoin-wallet*, *baricoin-gui* executables to communicate when [`--enable-multiprocess`](multiprocess.md) is used. |
+| *libbaricoin_node*        | P2P and RPC server functionality used by *baricoind* and *baricoin-qt* executables. |
+| *libbaricoin_util*        | Home for common functionality shared by different executables and libraries. Similar to *libbaricoin_common*, but lower-level (see [Dependencies](#dependencies)). |
+| *libbaricoin_wallet*      | Wallet functionality used by *baricoind* and *baricoin-wallet* executables. |
+| *libbaricoin_wallet_tool* | Lower-level wallet functionality used by *baricoin-wallet* executable. |
+| *libbaricoin_zmq*         | [ZeroMQ](../zmq.md) functionality used by *baricoind* and *baricoin-qt* executables. |
 
 ## Conventions
 
-- Most libraries are internal libraries and have APIs which are completely unstable! There are few or no restrictions on backwards compatibility or rules about external dependencies. Exceptions are *libfujicoin_consensus* and *libfujicoin_kernel* which have external interfaces documented at [../shared-libraries.md](../shared-libraries.md).
+- Most libraries are internal libraries and have APIs which are completely unstable! There are few or no restrictions on backwards compatibility or rules about external dependencies. Exceptions are *libbaricoin_consensus* and *libbaricoin_kernel* which have external interfaces documented at [../shared-libraries.md](../shared-libraries.md).
 
-- Generally each library should have a corresponding source directory and namespace. Source code organization is a work in progress, so it is true that some namespaces are applied inconsistently, and if you look at [`libfujicoin_*_SOURCES`](../../src/Makefile.am) lists you can see that many libraries pull in files from outside their source directory. But when working with libraries, it is good to follow a consistent pattern like:
+- Generally each library should have a corresponding source directory and namespace. Source code organization is a work in progress, so it is true that some namespaces are applied inconsistently, and if you look at [`libbaricoin_*_SOURCES`](../../src/Makefile.am) lists you can see that many libraries pull in files from outside their source directory. But when working with libraries, it is good to follow a consistent pattern like:
 
-  - *libfujicoin_node* code lives in `src/node/` in the `node::` namespace
-  - *libfujicoin_wallet* code lives in `src/wallet/` in the `wallet::` namespace
-  - *libfujicoin_ipc* code lives in `src/ipc/` in the `ipc::` namespace
-  - *libfujicoin_util* code lives in `src/util/` in the `util::` namespace
-  - *libfujicoin_consensus* code lives in `src/consensus/` in the `Consensus::` namespace
+  - *libbaricoin_node* code lives in `src/node/` in the `node::` namespace
+  - *libbaricoin_wallet* code lives in `src/wallet/` in the `wallet::` namespace
+  - *libbaricoin_ipc* code lives in `src/ipc/` in the `ipc::` namespace
+  - *libbaricoin_util* code lives in `src/util/` in the `util::` namespace
+  - *libbaricoin_consensus* code lives in `src/consensus/` in the `Consensus::` namespace
 
 ## Dependencies
 
@@ -39,43 +39,43 @@
 
 graph TD;
 
-fujicoin-cli[fujicoin-cli]-->libfujicoin_cli;
+baricoin-cli[baricoin-cli]-->libbaricoin_cli;
 
-fujicoind[fujicoind]-->libfujicoin_node;
-fujicoind[fujicoind]-->libfujicoin_wallet;
+baricoind[baricoind]-->libbaricoin_node;
+baricoind[baricoind]-->libbaricoin_wallet;
 
-fujicoin-qt[fujicoin-qt]-->libfujicoin_node;
-fujicoin-qt[fujicoin-qt]-->libfujicoinqt;
-fujicoin-qt[fujicoin-qt]-->libfujicoin_wallet;
+baricoin-qt[baricoin-qt]-->libbaricoin_node;
+baricoin-qt[baricoin-qt]-->libbaricoinqt;
+baricoin-qt[baricoin-qt]-->libbaricoin_wallet;
 
-fujicoin-wallet[fujicoin-wallet]-->libfujicoin_wallet;
-fujicoin-wallet[fujicoin-wallet]-->libfujicoin_wallet_tool;
+baricoin-wallet[baricoin-wallet]-->libbaricoin_wallet;
+baricoin-wallet[baricoin-wallet]-->libbaricoin_wallet_tool;
 
-libfujicoin_cli-->libfujicoin_common;
-libfujicoin_cli-->libfujicoin_util;
+libbaricoin_cli-->libbaricoin_common;
+libbaricoin_cli-->libbaricoin_util;
 
-libfujicoin_common-->libfujicoin_util;
-libfujicoin_common-->libfujicoin_consensus;
+libbaricoin_common-->libbaricoin_util;
+libbaricoin_common-->libbaricoin_consensus;
 
-libfujicoin_kernel-->libfujicoin_consensus;
-libfujicoin_kernel-->libfujicoin_util;
+libbaricoin_kernel-->libbaricoin_consensus;
+libbaricoin_kernel-->libbaricoin_util;
 
-libfujicoin_node-->libfujicoin_common;
-libfujicoin_node-->libfujicoin_consensus;
-libfujicoin_node-->libfujicoin_kernel;
-libfujicoin_node-->libfujicoin_util;
+libbaricoin_node-->libbaricoin_common;
+libbaricoin_node-->libbaricoin_consensus;
+libbaricoin_node-->libbaricoin_kernel;
+libbaricoin_node-->libbaricoin_util;
 
-libfujicoinqt-->libfujicoin_common;
-libfujicoinqt-->libfujicoin_util;
+libbaricoinqt-->libbaricoin_common;
+libbaricoinqt-->libbaricoin_util;
 
-libfujicoin_wallet-->libfujicoin_common;
-libfujicoin_wallet-->libfujicoin_util;
+libbaricoin_wallet-->libbaricoin_common;
+libbaricoin_wallet-->libbaricoin_util;
 
-libfujicoin_wallet_tool-->libfujicoin_util;
-libfujicoin_wallet_tool-->libfujicoin_wallet;
+libbaricoin_wallet_tool-->libbaricoin_util;
+libbaricoin_wallet_tool-->libbaricoin_wallet;
 
 classDef bold stroke-width:2px, font-weight:bold, font-size: smaller;
-class fujicoin-qt,fujicoind,fujicoin-cli,fujicoin-wallet bold
+class baricoin-qt,baricoind,baricoin-cli,baricoin-wallet bold
 ```
 </td></tr><tr><td>
 
@@ -83,22 +83,22 @@ class fujicoin-qt,fujicoind,fujicoin-cli,fujicoin-wallet bold
 
 </td></tr></table>
 
-- The graph shows what _linker symbols_ (functions and variables) from each library other libraries can call and reference directly, but it is not a call graph. For example, there is no arrow connecting *libfujicoin_wallet* and *libfujicoin_node* libraries, because these libraries are intended to be modular and not depend on each other's internal implementation details. But wallet code still is still able to call node code indirectly through the `interfaces::Chain` abstract class in [`interfaces/chain.h`](../../src/interfaces/chain.h) and node code calls wallet code through the `interfaces::ChainClient` and `interfaces::Chain::Notifications` abstract classes in the same file. In general, defining abstract classes in [`src/interfaces/`](../../src/interfaces/) can be a convenient way of avoiding unwanted direct dependencies or circular dependencies between libraries.
+- The graph shows what _linker symbols_ (functions and variables) from each library other libraries can call and reference directly, but it is not a call graph. For example, there is no arrow connecting *libbaricoin_wallet* and *libbaricoin_node* libraries, because these libraries are intended to be modular and not depend on each other's internal implementation details. But wallet code still is still able to call node code indirectly through the `interfaces::Chain` abstract class in [`interfaces/chain.h`](../../src/interfaces/chain.h) and node code calls wallet code through the `interfaces::ChainClient` and `interfaces::Chain::Notifications` abstract classes in the same file. In general, defining abstract classes in [`src/interfaces/`](../../src/interfaces/) can be a convenient way of avoiding unwanted direct dependencies or circular dependencies between libraries.
 
-- *libfujicoin_consensus* should be a standalone dependency that any library can depend on, and it should not depend on any other libraries itself.
+- *libbaricoin_consensus* should be a standalone dependency that any library can depend on, and it should not depend on any other libraries itself.
 
-- *libfujicoin_util* should also be a standalone dependency that any library can depend on, and it should not depend on other internal libraries.
+- *libbaricoin_util* should also be a standalone dependency that any library can depend on, and it should not depend on other internal libraries.
 
-- *libfujicoin_common* should serve a similar function as *libfujicoin_util* and be a place for miscellaneous code used by various daemon, GUI, and CLI applications and libraries to live. It should not depend on anything other than *libfujicoin_util* and *libfujicoin_consensus*. The boundary between _util_ and _common_ is a little fuzzy but historically _util_ has been used for more generic, lower-level things like parsing hex, and _common_ has been used for fujicoin-specific, higher-level things like parsing base58. The difference between util and common is mostly important because *libfujicoin_kernel* is not supposed to depend on *libfujicoin_common*, only *libfujicoin_util*. In general, if it is ever unclear whether it is better to add code to *util* or *common*, it is probably better to add it to *common* unless it is very generically useful or useful particularly to include in the kernel.
+- *libbaricoin_common* should serve a similar function as *libbaricoin_util* and be a place for miscellaneous code used by various daemon, GUI, and CLI applications and libraries to live. It should not depend on anything other than *libbaricoin_util* and *libbaricoin_consensus*. The boundary between _util_ and _common_ is a little fuzzy but historically _util_ has been used for more generic, lower-level things like parsing hex, and _common_ has been used for baricoin-specific, higher-level things like parsing base58. The difference between util and common is mostly important because *libbaricoin_kernel* is not supposed to depend on *libbaricoin_common*, only *libbaricoin_util*. In general, if it is ever unclear whether it is better to add code to *util* or *common*, it is probably better to add it to *common* unless it is very generically useful or useful particularly to include in the kernel.
 
 
-- *libfujicoin_kernel* should only depend on *libfujicoin_util* and *libfujicoin_consensus*.
+- *libbaricoin_kernel* should only depend on *libbaricoin_util* and *libbaricoin_consensus*.
 
-- The only thing that should depend on *libfujicoin_kernel* internally should be *libfujicoin_node*. GUI and wallet libraries *libfujicoinqt* and *libfujicoin_wallet* in particular should not depend on *libfujicoin_kernel* and the unneeded functionality it would pull in, like block validation. To the extent that GUI and wallet code need scripting and signing functionality, they should be get able it from *libfujicoin_consensus*, *libfujicoin_common*, and *libfujicoin_util*, instead of *libfujicoin_kernel*.
+- The only thing that should depend on *libbaricoin_kernel* internally should be *libbaricoin_node*. GUI and wallet libraries *libbaricoinqt* and *libbaricoin_wallet* in particular should not depend on *libbaricoin_kernel* and the unneeded functionality it would pull in, like block validation. To the extent that GUI and wallet code need scripting and signing functionality, they should be get able it from *libbaricoin_consensus*, *libbaricoin_common*, and *libbaricoin_util*, instead of *libbaricoin_kernel*.
 
-- GUI, node, and wallet code internal implementations should all be independent of each other, and the *libfujicoinqt*, *libfujicoin_node*, *libfujicoin_wallet* libraries should never reference each other's symbols. They should only call each other through [`src/interfaces/`](`../../src/interfaces/`) abstract interfaces.
+- GUI, node, and wallet code internal implementations should all be independent of each other, and the *libbaricoinqt*, *libbaricoin_node*, *libbaricoin_wallet* libraries should never reference each other's symbols. They should only call each other through [`src/interfaces/`](`../../src/interfaces/`) abstract interfaces.
 
 ## Work in progress
 
-- Validation code is moving from *libfujicoin_node* to *libfujicoin_kernel* as part of [The libfujicoinkernel Project #24303](https://github.com/bitcoin/bitcoin/issues/24303)
+- Validation code is moving from *libbaricoin_node* to *libbaricoin_kernel* as part of [The libbaricoinkernel Project #24303](https://github.com/bitcoin/bitcoin/issues/24303)
 - Source code organization is discussed in general in [Library source code organization #15732](https://github.com/bitcoin/bitcoin/issues/15732)

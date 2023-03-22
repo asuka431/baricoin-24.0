@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NODE_INTERFACE_UI_H
-#define FUJICOIN_NODE_INTERFACE_UI_H
+#ifndef BARICOIN_NODE_INTERFACE_UI_H
+#define BARICOIN_NODE_INTERFACE_UI_H
 
 #include <functional>
 #include <memory>
@@ -120,4 +120,4 @@ constexpr auto AbortError = InitError;
 
 extern CClientUIInterface uiInterface;
 
-#endif // FUJICOIN_NODE_INTERFACE_UI_H
+#endif // BARICOIN_NODE_INTERFACE_UI_H

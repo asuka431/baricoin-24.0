@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2019-2021 The Fujicoin Core developers
+# Copyright (c) 2019-2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 # Test Taproot softfork (BIPs 340-342)
@@ -90,7 +90,7 @@ from test_framework.script_util import (
     script_to_p2sh_script,
     script_to_p2wsh_script,
 )
-from test_framework.test_framework import FujicoinTestFramework
+from test_framework.test_framework import BaricoinTestFramework
 from test_framework.util import (
     assert_raises_rpc_error,
     assert_equal,
@@ -1227,7 +1227,7 @@ def dump_json_test(tx, input_utxos, idx, success, failure):
 UTXOData = namedtuple('UTXOData', 'outpoint,output,spender')
 
 
-class TaprootTest(FujicoinTestFramework):
+class TaprootTest(BaricoinTestFramework):
     def add_options(self, parser):
         parser.add_argument("--dumptests", dest="dump_tests", default=False, action="store_true",
                             help="Dump generated test cases to directory set by TEST_DUMP_DIR environment variable")

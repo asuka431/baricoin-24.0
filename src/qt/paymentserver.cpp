@@ -3,12 +3,12 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <qt/paymentserver.h>
 
-#include <qt/fujicoinunits.h>
+#include <qt/baricoinunits.h>
 #include <qt/guiutil.h>
 #include <qt/optionsmodel.h>
 
@@ -36,8 +36,8 @@
 #include <QStringList>
 #include <QUrlQuery>
 
-const int FUJICOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString FUJICOIN_IPC_PREFIX("fujicoin:");
+const int BARICOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
+const QString BARICOIN_IPC_PREFIX("baricoin:");
 
 //
 // Create a name that is unique for:
@@ -46,7 +46,7 @@ const QString FUJICOIN_IPC_PREFIX("fujicoin:");
 //
 static QString ipcServerName()
 {
-    QString name("FujicoinQt");
+    QString name("BaricoinQt");
 
     // Append a simple hash of the datadir
     // Note that gArgs.GetDataDirNet() returns a different path
@@ -80,7 +80,7 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
         QString arg(argv[i]);
         if (arg.startsWith("-")) continue;
 
-        if (arg.startsWith(FUJICOIN_IPC_PREFIX, Qt::CaseInsensitive)) // fujicoin: URI
+        if (arg.startsWith(BARICOIN_IPC_PREFIX, Qt::CaseInsensitive)) // baricoin: URI
         {
             savedPaymentRequests.insert(arg);
         }
@@ -100,7 +100,7 @@ bool PaymentServer::ipcSendCommandLine()
     {
         QLocalSocket* socket = new QLocalSocket();
         socket->connectToServer(ipcServerName(), QIODevice::WriteOnly);
-        if (!socket->waitForConnected(FUJICOIN_IPC_CONNECT_TIMEOUT))
+        if (!socket->waitForConnected(BARICOIN_IPC_CONNECT_TIMEOUT))
         {
             delete socket;
             socket = nullptr;
@@ -115,7 +115,7 @@ bool PaymentServer::ipcSendCommandLine()
 
         socket->write(block);
         socket->flush();
-        socket->waitForBytesWritten(FUJICOIN_IPC_CONNECT_TIMEOUT);
+        socket->waitForBytesWritten(BARICOIN_IPC_CONNECT_TIMEOUT);
         socket->disconnectFromServer();
 
         delete socket;
@@ -133,7 +133,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
     optionsModel(nullptr)
 {
     // Install global event filter to catch QFileOpenEvents
-    // on Mac: sent when you click fujicoin: links
+    // on Mac: sent when you click baricoin: links
     // other OSes: helpful when dealing with payment request files
     if (parent)
         parent->installEventFilter(this);
@@ -150,7 +150,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(nullptr, tr("Payment request error"),
-                tr("Cannot start fujicoin: click-to-pay handler"));
+                tr("Cannot start baricoin: click-to-pay handler"));
         }
         else {
             connect(uriServer, &QLocalServer::newConnection, this, &PaymentServer::handleURIConnection);
@@ -161,7 +161,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
 PaymentServer::~PaymentServer() = default;
 
 //
-// OSX-specific way of handling fujicoin: URIs
+// OSX-specific way of handling baricoin: URIs
 //
 bool PaymentServer::eventFilter(QObject *object, QEvent *event)
 {
@@ -196,18 +196,18 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith("fujicoin://", Qt::CaseInsensitive))
+    if (s.startsWith("baricoin://", Qt::CaseInsensitive))
     {
-        Q_EMIT message(tr("URI handling"), tr("'fujicoin://' is not a valid URI. Use 'fujicoin:' instead."),
+        Q_EMIT message(tr("URI handling"), tr("'baricoin://' is not a valid URI. Use 'baricoin:' instead."),
             CClientUIInterface::MSG_ERROR);
     }
-    else if (s.startsWith(FUJICOIN_IPC_PREFIX, Qt::CaseInsensitive)) // fujicoin: URI
+    else if (s.startsWith(BARICOIN_IPC_PREFIX, Qt::CaseInsensitive)) // baricoin: URI
     {
         QUrlQuery uri((QUrl(s)));
         // normal URI
         {
             SendCoinsRecipient recipient;
-            if (GUIUtil::parseFujicoinURI(s, &recipient))
+            if (GUIUtil::parseBaricoinURI(s, &recipient))
             {
                 std::string error_msg;
                 const CTxDestination dest = DecodeDestination(recipient.address.toStdString(), error_msg);
@@ -228,7 +228,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid Fujicoin address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid Baricoin address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;

@@ -1313,7 +1313,7 @@ void PeerManagerImpl::FindNextBlocksToDownload(CNode& pto, const Peer& peer, uns
         LogPrintf("::Set ActiveChainstate().IsStartUp=%d\n", m_chainman.ActiveChainstate().IsStartUp);
     }
 
-    // Introduce settlement to Fujicoin's block chain.
+    // Introduce settlement to Baricoin's block chain.
     // Payment will be settled with 6 confirmations.
     if(m_chainman.ActiveChainstate().IsStartUp < 1 && m_chainman.ActiveChain().Height() - state->pindexLastCommonBlock->nHeight >= 6){
         LogPrintf("::Peer disconnected: Over Height=%d peer=%d\n", m_chainman.ActiveChain().Height() - state->pindexLastCommonBlock->nHeight, pto.GetId());

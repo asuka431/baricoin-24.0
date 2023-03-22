@@ -4,12 +4,12 @@
  * file COPYING or http://www.opensource.org/licenses/mit-license.php.*
  **********************************************************************/
 
-#ifndef FUJICOIN_LIBSECP256K1_CONFIG_H
-#define FUJICOIN_LIBSECP256K1_CONFIG_H
+#ifndef BARICOIN_LIBSECP256K1_CONFIG_H
+#define BARICOIN_LIBSECP256K1_CONFIG_H
 
 #undef USE_ASM_X86_64
 
 #define ECMULT_GEN_PREC_BITS 4
 #define ECMULT_WINDOW_SIZE 15
 
-#endif // FUJICOIN_LIBSECP256K1_CONFIG_H
+#endif // BARICOIN_LIBSECP256K1_CONFIG_H

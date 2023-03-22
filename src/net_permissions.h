@@ -8,8 +8,8 @@
 #include <type_traits>
 #include <vector>
 
-#ifndef FUJICOIN_NET_PERMISSIONS_H
-#define FUJICOIN_NET_PERMISSIONS_H
+#ifndef BARICOIN_NET_PERMISSIONS_H
+#define BARICOIN_NET_PERMISSIONS_H
 
 struct bilingual_str;
 
@@ -86,4 +86,4 @@ public:
     CSubNet m_subnet;
 };
 
-#endif // FUJICOIN_NET_PERMISSIONS_H
+#endif // BARICOIN_NET_PERMISSIONS_H

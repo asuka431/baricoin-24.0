@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_TEST_FUZZ_MEMPOOL_UTILS_H
-#define FUJICOIN_TEST_FUZZ_MEMPOOL_UTILS_H
+#ifndef BARICOIN_TEST_FUZZ_MEMPOOL_UTILS_H
+#define BARICOIN_TEST_FUZZ_MEMPOOL_UTILS_H
 
 #include <validation.h>
 
@@ -16,4 +16,4 @@ public:
     }
 };
 
-#endif // FUJICOIN_TEST_FUZZ_MEMPOOL_UTILS_H
+#endif // BARICOIN_TEST_FUZZ_MEMPOOL_UTILS_H

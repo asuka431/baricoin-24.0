@@ -5,9 +5,9 @@ This document describes how to set up your own Signet network.
 Launch Signet
 =============
 
-fujicoin.conf settings
+baricoin.conf settings
 ----------------------
-Set `fujicoin.conf` in the data folder(`~/.fujicoin`) referring to the example below.
+Set `baricoin.conf` in the data folder(`~/.baricoin`) referring to the example below.
 
     [main]
     #rpcuser=
@@ -26,21 +26,21 @@ Set `fujicoin.conf` in the data folder(`~/.fujicoin`) referring to the example b
     #addnode=
     #signetchallenge=512102f8........4f2a51ae
 
-Start fujicoind with signet: `./fujicoind -signet`
+Start baricoind with signet: `./baricoind -signet`
 
 Create a signetchallenge for your own network
 ---------------------------------------------
-Follow the steps below to get the Fujicoin legacy address and pubkey.
+Follow the steps below to get the Baricoin legacy address and pubkey.
 
-    ./fujicoind -regtest -daemon
-    ./fujicoin-cli -regtest createwallet "test"
-    ADDR=$(./fujicoin-cli -regtest getnewaddress "" "legacy")
+    ./baricoind -regtest -daemon
+    ./baricoin-cli -regtest createwallet "test"
+    ADDR=$(./baricoin-cli -regtest getnewaddress "" "legacy")
     echo $ADDR
-    PRIVKEY=$(./fujicoin-cli -regtest dumpprivkey $ADDR)
+    PRIVKEY=$(./baricoin-cli -regtest dumpprivkey $ADDR)
     echo $PRIVKEY
-    ./fujicoin-cli -regtest getaddressinfo $ADDR | grep pubkey
+    ./baricoin-cli -regtest getaddressinfo $ADDR | grep pubkey
     # "pubkey": "THE_REAL_PUBKEY"
-    ./fujicoin-cli -regtest stop
+    ./baricoin-cli -regtest stop
 
 Your signetch allenge is below.
 
@@ -49,23 +49,23 @@ Your signetch allenge is below.
 
 Mining environment settings
 ---------------------------
-Set the completed signetchallenge in fujicoin.conf and restart fujicoind. Then import the private key above.
+Set the completed signetchallenge in baricoin.conf and restart baricoind. Then import the private key above.
 
-    ./fujicoind -signet
-    CLI="./fujicoin-cli -signet"
+    ./baricoind -signet
+    CLI="./baricoin-cli -signet"
     $CLI createwallet "signet"
     $CLI -signet importprivkey $PRIVKEY
 
 Mining
 ======
 
-[Get fijicoin-signet-utility.zip](https://download.fujicoin.org/fujicoin-signet-utility/), then unzip it to the folder where you installed fujicoin.
+[Get fijicoin-signet-utility.zip](https://download.baricoin.org/baricoin-signet-utility/), then unzip it to the folder where you installed baricoin.
 To mine the first block in your custom chain, you can run:
 
-    cd to_fujicoind_folder
-    CLI="./fujicoin-cli -signet"
+    cd to_baricoind_folder
+    CLI="./baricoin-cli -signet"
     MINER="python3 miner.py"
-    GRIND="./fujicoin-util grind"
+    GRIND="./baricoin-util grind"
     ADDR="W4FVbSKsCyRcMPm8pAsdSsgSAtiXAyfovj"  # Note: Use legacy address
 
 To mining block number 1, execute the following command. 

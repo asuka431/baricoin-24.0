@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_POW_H
-#define FUJICOIN_POW_H
+#ifndef BARICOIN_POW_H
+#define BARICOIN_POW_H
 
 #include <consensus/params.h>
 
@@ -35,4 +35,4 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
  */
 bool PermittedDifficultyTransition(const Consensus::Params& params, int64_t height, uint32_t old_nbits, uint32_t new_nbits);
 
-#endif // FUJICOIN_POW_H
+#endif // BARICOIN_POW_H

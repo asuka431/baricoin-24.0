@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020-2021 The Fujicoin Core developers
+# Copyright (c) 2020-2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Script for verifying Fujicoin Core release binaries
+"""Script for verifying Baricoin Core release binaries
 
 This script attempts to download the signature file SHA256SUMS.asc from
-fujicoincore.org and fujicoin.org and compares them.
+baricoincore.org and baricoin.org and compares them.
 It first checks if the signature passes, and then downloads the files
 specified in the file, and checks if the hashes of these files match those
 that are specified in the signature file.
@@ -19,11 +19,11 @@ import subprocess
 import sys
 from textwrap import indent
 
-WORKINGDIR = "/tmp/fujicoin_verify_binaries"
+WORKINGDIR = "/tmp/baricoin_verify_binaries"
 HASHFILE = "hashes.tmp"
 HOST1 = "https://bitcoincore.org"
 HOST2 = "https://bitcoin.org"
-VERSIONPREFIX = "fujicoin-core-"
+VERSIONPREFIX = "baricoin-core-"
 SIGNATUREFILENAME = "SHA256SUMS.asc"
 
 
@@ -112,8 +112,8 @@ def main(args):
     sigfile2 = SIGNATUREFILENAME + ".2"
     success, output = download_with_wget(HOST2 + remote_sigfile, sigfile2)
     if not success:
-        print("fujicoin.org failed to provide signature file, "
-              "but fujicoincore.org did?")
+        print("baricoin.org failed to provide signature file, "
+              "but baricoincore.org did?")
         print("wget output:")
         print(indent(output, '\t'))
         remove_files([sigfile1])
@@ -121,7 +121,7 @@ def main(args):
 
     # ensure that both signature files are equal
     if not files_are_equal(sigfile1, sigfile2):
-        print("fujicoin.org and fujicoincore.org signature files were not equal?")
+        print("baricoin.org and baricoincore.org signature files were not equal?")
         print(f"See files {WORKINGDIR}/{sigfile1} and {WORKINGDIR}/{sigfile2}")
         return 6
 
@@ -131,7 +131,7 @@ def main(args):
         if retval == 1:
             print("Bad signature.")
         elif retval == 2:
-            print("gpg error. Do you have the Fujicoin Core binary release "
+            print("gpg error. Do you have the Baricoin Core binary release "
                   "signing key installed?")
         print("gpg output:")
         print(indent(output, '\t'))

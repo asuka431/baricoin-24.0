@@ -3,13 +3,13 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <qt/optionsdialog.h>
 #include <qt/forms/ui_optionsdialog.h>
 
-#include <qt/fujicoinunits.h>
+#include <qt/baricoinunits.h>
 #include <qt/clientmodel.h>
 #include <qt/guiconstants.h>
 #include <qt/guiutil.h>
@@ -79,8 +79,8 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     /* remove Window tab on Mac */
     ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWindow));
     /* hide launch at startup option on macOS */
-    ui->fujicoinAtStartup->setVisible(false);
-    ui->verticalLayout_Main->removeWidget(ui->fujicoinAtStartup);
+    ui->baricoinAtStartup->setVisible(false);
+    ui->verticalLayout_Main->removeWidget(ui->baricoinAtStartup);
     ui->verticalLayout_Main->removeItem(ui->horizontalSpacer_0_Main);
 #endif
 
@@ -99,10 +99,10 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     /* Display elements init */
     QDir translations(":translations");
 
-    ui->fujicoinAtStartup->setToolTip(ui->fujicoinAtStartup->toolTip().arg(PACKAGE_NAME));
-    ui->fujicoinAtStartup->setText(ui->fujicoinAtStartup->text().arg(PACKAGE_NAME));
+    ui->baricoinAtStartup->setToolTip(ui->baricoinAtStartup->toolTip().arg(PACKAGE_NAME));
+    ui->baricoinAtStartup->setText(ui->baricoinAtStartup->text().arg(PACKAGE_NAME));
 
-    ui->openFujicoinConfButton->setToolTip(ui->openFujicoinConfButton->toolTip().arg(PACKAGE_NAME));
+    ui->openBaricoinConfButton->setToolTip(ui->openBaricoinConfButton->toolTip().arg(PACKAGE_NAME));
 
     ui->lang->setToolTip(ui->lang->toolTip().arg(PACKAGE_NAME));
     ui->lang->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
@@ -122,7 +122,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
             ui->lang->addItem(locale.nativeLanguageName() + QString(" (") + langStr + QString(")"), QVariant(langStr));
         }
     }
-    ui->unit->setModel(new FujicoinUnits(this));
+    ui->unit->setModel(new BaricoinUnits(this));
 
     /* Widget-to-option mapper */
     mapper = new QDataWidgetMapper(this);
@@ -235,7 +235,7 @@ void OptionsDialog::setCurrentTab(OptionsDialog::Tab tab)
 void OptionsDialog::setMapper()
 {
     /* Main */
-    mapper->addMapping(ui->fujicoinAtStartup, OptionsModel::StartAtStartup);
+    mapper->addMapping(ui->baricoinAtStartup, OptionsModel::StartAtStartup);
     mapper->addMapping(ui->threadsScriptVerif, OptionsModel::ThreadsScriptVerif);
     mapper->addMapping(ui->databaseCache, OptionsModel::DatabaseCache);
     mapper->addMapping(ui->prune, OptionsModel::Prune);
@@ -311,7 +311,7 @@ void OptionsDialog::on_resetButton_clicked()
     }
 }
 
-void OptionsDialog::on_openFujicoinConfButton_clicked()
+void OptionsDialog::on_openBaricoinConfButton_clicked()
 {
     QMessageBox config_msgbox(this);
     config_msgbox.setIcon(QMessageBox::Information);
@@ -331,7 +331,7 @@ void OptionsDialog::on_openFujicoinConfButton_clicked()
     if (config_msgbox.clickedButton() != open_button) return;
 
     /* show an error if there was some problem opening the file */
-    if (!GUIUtil::openFujicoinConf())
+    if (!GUIUtil::openBaricoinConf())
         QMessageBox::critical(this, tr("Error"), tr("The configuration file could not be opened."));
 }
 

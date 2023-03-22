@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NODE_MINER_H
-#define FUJICOIN_NODE_MINER_H
+#ifndef BARICOIN_NODE_MINER_H
+#define BARICOIN_NODE_MINER_H
 
 #include <primitives/block.h>
 #include <txmempool.h>
@@ -199,4 +199,4 @@ int64_t UpdateTime(CBlockHeader* pblock, const Consensus::Params& consensusParam
 void RegenerateCommitments(CBlock& block, ChainstateManager& chainman);
 } // namespace node
 
-#endif // FUJICOIN_NODE_MINER_H
+#endif // BARICOIN_NODE_MINER_H

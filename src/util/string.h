@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_STRING_H
-#define FUJICOIN_UTIL_STRING_H
+#ifndef BARICOIN_UTIL_STRING_H
+#define BARICOIN_UTIL_STRING_H
 
 #include <util/spanparsing.h>
 
@@ -125,4 +125,4 @@ template <typename T1, size_t PREFIX_LEN>
            std::equal(std::begin(prefix), std::end(prefix), std::begin(obj));
 }
 
-#endif // FUJICOIN_UTIL_STRING_H
+#endif // BARICOIN_UTIL_STRING_H

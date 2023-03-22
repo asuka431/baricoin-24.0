@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_DEPLOYMENTINFO_H
-#define FUJICOIN_DEPLOYMENTINFO_H
+#ifndef BARICOIN_DEPLOYMENTINFO_H
+#define BARICOIN_DEPLOYMENTINFO_H
 
 #include <consensus/params.h>
 
@@ -26,4 +26,4 @@ inline std::string DeploymentName(Consensus::DeploymentPos pos)
     return VersionBitsDeploymentInfo[pos].name;
 }
 
-#endif // FUJICOIN_DEPLOYMENTINFO_H
+#endif // BARICOIN_DEPLOYMENTINFO_H

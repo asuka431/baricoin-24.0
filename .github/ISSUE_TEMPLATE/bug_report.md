@@ -7,9 +7,9 @@ assignees: ''
 
 ---
 
-<!-- This issue tracker is only for technical issues related to Fujicoin Core.
+<!-- This issue tracker is only for technical issues related to Baricoin Core.
 
-General fujicoin questions and/or support requests are best directed to the Fujicoin StackExchange at https://bitcoin.stackexchange.com.
+General baricoin questions and/or support requests are best directed to the Baricoin StackExchange at https://bitcoin.stackexchange.com.
 
 For reporting security issues, please read instructions at https://bitcoincore.org/en/contact/.
 
@@ -31,7 +31,7 @@ If the node is "stuck" during sync or giving "block checksum mismatch" errors, p
 
 **System information**
 
-<!-- What version of Fujicoin Core are you using, where did you get it (website, self-compiled, etc)? -->
+<!-- What version of Baricoin Core are you using, where did you get it (website, self-compiled, etc)? -->
 
 <!-- What type of machine are you observing the error on (OS/CPU and disk type)? -->
 

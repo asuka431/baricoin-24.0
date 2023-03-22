@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_KERNEL_MEMPOOL_PERSIST_H
-#define FUJICOIN_KERNEL_MEMPOOL_PERSIST_H
+#ifndef BARICOIN_KERNEL_MEMPOOL_PERSIST_H
+#define BARICOIN_KERNEL_MEMPOOL_PERSIST_H
 
 #include <fs.h>
 
@@ -25,4 +25,4 @@ bool LoadMempool(CTxMemPool& pool, const fs::path& load_path,
 } // namespace kernel
 
 
-#endif // FUJICOIN_KERNEL_MEMPOOL_PERSIST_H
+#endif // BARICOIN_KERNEL_MEMPOOL_PERSIST_H

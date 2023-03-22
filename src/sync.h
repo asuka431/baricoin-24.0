@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_SYNC_H
-#define FUJICOIN_SYNC_H
+#ifndef BARICOIN_SYNC_H
+#define BARICOIN_SYNC_H
 
 #ifdef DEBUG_LOCKCONTENTION
 #include <logging.h>
@@ -400,4 +400,4 @@ public:
     }
 };
 
-#endif // FUJICOIN_SYNC_H
+#endif // BARICOIN_SYNC_H

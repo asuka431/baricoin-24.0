@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_KERNEL_CHAINSTATEMANAGER_OPTS_H
-#define FUJICOIN_KERNEL_CHAINSTATEMANAGER_OPTS_H
+#ifndef BARICOIN_KERNEL_CHAINSTATEMANAGER_OPTS_H
+#define BARICOIN_KERNEL_CHAINSTATEMANAGER_OPTS_H
 
 #include <util/time.h>
 
@@ -26,4 +26,4 @@ struct ChainstateManagerOpts {
 
 } // namespace kernel
 
-#endif // FUJICOIN_KERNEL_CHAINSTATEMANAGER_OPTS_H
+#endif // BARICOIN_KERNEL_CHAINSTATEMANAGER_OPTS_H

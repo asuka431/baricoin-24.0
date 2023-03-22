@@ -1,5 +1,5 @@
 {
-  "name": "fujicoin-core",
+  "name": "baricoin-core",
   "version-string": "1",
   "dependencies": [
     "berkeleydb",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The Fujicoin Core developers
+# Copyright (c) 2021 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
@@ -29,12 +29,12 @@ from test_framework.script import (
     OP_TRUE,
     hash160,
 )
-from test_framework.test_framework import FujicoinTestFramework
+from test_framework.test_framework import BaricoinTestFramework
 from test_framework.util import (
     assert_equal,
 )
 
-class MempoolWtxidTest(FujicoinTestFramework):
+class MempoolWtxidTest(BaricoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True
