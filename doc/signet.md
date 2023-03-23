@@ -45,7 +45,7 @@ Follow the steps below to get the Baricoin legacy address and pubkey.
 Your signetch allenge is below.
 
     signetchallenge = 5121 + THE_REAL_PUBKEY + 51ae
-                    = 512102f8........4f2a51ae
+                    = 51210324........48df51ae
 
 Mining environment settings
 ---------------------------
